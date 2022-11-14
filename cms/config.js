@@ -52,7 +52,7 @@ export default {
     public_folder: '/images',
     collections: [
         {
-            label: "Blog", name: "blog", folder: "_posts/blog", create: true, fields: [
+            label: "Blog", name: "blog", folder: "posts", create: true, fields: [
                 {label: "Author", name: "author", widget: "string"},
                 {label: "Categories", name: "categories", widget: "list"},
                 {label: "Publish Date", name: "date", widget: "datetime"},
