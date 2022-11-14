@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { slugify, ImageUrl } from '../utils'
-import Image from 'next/Image'
+import Image from 'next/image'
 
 export default function Post({ post }) {
 
