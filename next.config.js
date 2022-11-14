@@ -6,6 +6,8 @@ const nextconfig = {
         loader: "akamai",
         path: "",
     },
+    basePath: "/netlifycms-test",
+    assetPrefix: "/netlifycms-test",
     disableImportAliasWarning: true,
 }
 
