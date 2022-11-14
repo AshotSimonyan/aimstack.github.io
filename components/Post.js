@@ -12,7 +12,7 @@ export default function Post({ post }) {
       {/*<a href={`/blog/${post.slug}`} > <img className="card-img-top" src={ImageUrl(post.image)} alt={post.title} /></a>*/}
         {/*aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa*/}
       <a href={`/blog/${post.slug}`} >
-          <Image   src={post.image} className="card-img-top"  alt={post.title} title="" width="100%" height="100%" layout="responsive" objectFit="contain"/>
+          <Image   src={`${post.image || ''}`} className="card-img-top"  alt={post.title} title="" width="100%" height="100%" layout="responsive" objectFit="contain"/>
       </a>
       <div className="card-body">
         <div className="small text-muted">{`${date.getMonth() + 1} - ${date.getDate()} - ${date.getFullYear()}`}</div>

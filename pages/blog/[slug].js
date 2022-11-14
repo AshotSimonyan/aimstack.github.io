@@ -9,6 +9,7 @@ export default function PostPage({ post }) {
   const date = new Date(post.date)
 
 
+    console.log(post)
 
   return (
     <>

@@ -5,10 +5,9 @@ import { NextSeo } from 'next-seo';
 import { allPosts } from "contentlayer/generated";
 import { ImageUrl } from '../utils'
 
-
 export default function Search() {
     const { query } = useRouter()
-    const TempPosts = []    
+    const TempPosts = []
 
     allPosts.map(
         (post) => {
@@ -22,12 +21,13 @@ export default function Search() {
         }
     )
 
-    //   remove null in posts 
+    //   remove null in posts
     const posts = TempPosts.filter(
         path => {
             return path && path
         }
     )
+
 
     return (
         <div>
