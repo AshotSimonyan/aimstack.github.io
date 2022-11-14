@@ -1,0 +1,25 @@
+{
+  "name": "contentlayer",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "postbuild": "next-sitemap"
+  },
+  "dependencies": {
+    "netlify-cms-app": "^2.15.72",
+    "next": "12.1.5",
+    "react": "18.1.0",
+    "react-dom": "18.1.0"
+  },
+  "devDependencies": {
+    "contentlayer": "^0.2.4",
+    "eslint": "7.32.0",
+    "eslint-config-next": "12.1.5",
+    "next-contentlayer": "^0.2.4",
+    "next-seo": "^5.4.0",
+    "next-sitemap": "^2.5.20"
+  }
+}
