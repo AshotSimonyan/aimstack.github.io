@@ -7,7 +7,7 @@ name: Deploy Next.js site to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["main"]
+    branches: [ "main" ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -74,20 +74,11 @@ jobs:
         run: npm install --force
       - name: Build with Next.js
         run: npm run build
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          name: static-site
-          path: out/
-
-  # Deployment job
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
+      - name: Export
+        run: npm run export
+      - run: touch ./out/.nojekyll
+      - name: Deploy 🚀
+          uses: JamesIves/github-pages-deploy-action@v4.2.5
+          with:
+            branch: main # The branch the action should deploy to.
+            folder: out # The folder the action should deploy.
