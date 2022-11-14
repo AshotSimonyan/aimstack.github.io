@@ -74,12 +74,11 @@ jobs:
         run: npm install --force
       - name: Build with Next.js
         run: npm run build
-      - name: Static HTML export with Next.js
-        run: ${{ steps.detect-package-manager.outputs.runner }} next export
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: ./out
+          name: static-site
+          path: out/
 
   # Deployment job
   deploy:
