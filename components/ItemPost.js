@@ -4,8 +4,6 @@ import {ImageUrl} from "../utils";
 export default function ItemPost({ post }) {
 
   const date = new Date(post.date)
-    console.log(post.image)
-    console.log(ImageUrl(post.image))
   return (
     <div className="card mb-4">
       <a href={`/blog/${post.slug}`} > <img className="card-img-top" src={ post.image} alt={post.title} /></a>

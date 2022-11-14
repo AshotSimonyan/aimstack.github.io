@@ -10,9 +10,6 @@ import { show_per_page } from "../config"
 
 export default function Home({ posts,totalPostCount }) {
 
-    // console.log(posts)
-
-    console.log({posts})
   return (
     <>
       <NextSeo

@@ -4,8 +4,6 @@ import Image from 'next/Image'
 
 export default function Post({ post }) {
 
-    console.log(post.image)
-    console.log(ImageUrl(post.image))
   const date = new Date(post.date)
   return (
     <div className="card mb-4">
