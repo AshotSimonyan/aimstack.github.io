@@ -1,9 +1,12 @@
-
-const { withContentlayer} = require('next-contentlayer')
+const {withContentlayer} = require('next-contentlayer')
 
 const nextconfig = {
-  reactStrictMode: true,
-  disableImportAliasWarning: true,
+    reactStrictMode: true,
+    images: {
+        loader: "akamai",
+        path: "",
+    },
+    disableImportAliasWarning: true,
 }
 
 
