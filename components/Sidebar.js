@@ -5,10 +5,10 @@ import { allPosts } from "contentlayer/generated";
 export default function Sidebar() {
   const [search, setSearch]= useState()
   function findSerach(value) {
-   
+
     setSearch(value.target.value)
   }
- 
+
   return (
     <div className="col-lg-4">
 
@@ -17,8 +17,8 @@ export default function Sidebar() {
         <div className="card-body">
           <div className="input-group">
             <input onChange={findSerach} className="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" />
-            <Link href={{ pathname: '/Search', query: { q: search?.toLowerCase() } }}> 
-              <a className="btn btn-primary" id="button-search">Go!</a>
+            <Link href={{ pathname: '/Search', query: { q: search?.toLowerCase() } }} className="btn btn-primary" id="button-search">
+                Go!
             </Link>
           </div>
         </div>
@@ -30,26 +30,26 @@ export default function Sidebar() {
           <div className="row">
             <div className="col-sm-10">
               <ul className="list-unstyled mb-0">
-               
+
                {
                   allPosts?.map(
                     post => {
                       return post.categories.map(
                       item => {
                         const slug = slugify(item)
-                       
-                        return <Link key={item} href={`/category/${slug}`}>
-                          <a> <li> {item} </li></a>
-                        </Link>
+
+                        return <li key={item} >
+                          <Link href={`/category/${slug}`}> {item} </Link>
+                        </li>
                       }
                     )
-                  
-                } 
+
+                }
                   )
                 }
               </ul>
             </div>
-           
+
           </div>
         </div>
       </div>

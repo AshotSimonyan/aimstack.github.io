@@ -41,7 +41,7 @@ export default function PostPage({ post }) {
               <div className="col-lg-10 m-auto">
                 <div className='card card-page'>
                   <a href={`/blog/${post.slug}`} >
-                    <Image   src={post.image} className="card-img-top"  alt={post.title} title="" width="100%" height="100%" layout="responsive" objectFit="contain"/>
+                    <Image   src={post.image} className="card-img-top"  alt={post.title} title="" width="1000" height="1000"  layout="responsive" objectFit="contain"/>
                   </a>
                   <h1 className='post-title mt-2 p-2'>{post.title}</h1>
                   <div className='post-date m-1 p-2'>
@@ -53,10 +53,8 @@ export default function PostPage({ post }) {
 
                           const slug = slugify(category)
 
-                          return (<Link key={category} href={`/category/${slug}`}>
-                            <a className='btn'>
+                          return (<Link key={category} href={`/category/${slug}`} className='btn'>
                               <h6 className=' post-title'>#{category}</h6>
-                            </a>
                           </Link>)
                         }
                       )

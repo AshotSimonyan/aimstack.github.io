@@ -10,11 +10,11 @@ function Pagnation({totalPostCount}) {
  totalPostCount = 3
  conver into array [0,1,2]
  base on array create list in array
- 
+
 */
 
   let pageIntoArray = Array.from(Array(totalPostCount).keys())
-  
+
 
   return (
 
@@ -23,9 +23,7 @@ function Pagnation({totalPostCount}) {
         {
           pageIntoArray.map(page => {
             return <li  key={page} className="page-item p-2">
-              <Link href={ page === 0 ? "/" : `/page/${page + 1}` }>
-                <a className="page-link" >{page + 1}</a>
-              </Link>
+              <Link href={ page === 0 ? "/" : `/page/${page + 1}` } className="page-link">{page + 1}</Link>
             </li>
           })
         }
