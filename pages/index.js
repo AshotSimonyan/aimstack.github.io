@@ -7,8 +7,28 @@ import { allPosts } from "contentlayer/generated";
 import { pick } from "@contentlayer/client";
 import Pagnation from '../components/Pagnation';
 import { show_per_page } from "../config"
+import {styled} from "../stitches.config";
 
 export default function Home({ posts,totalPostCount }) {
+
+    const Text = styled('p', {
+        fontFamily: '$system',
+        color: '$hiContrast',
+
+        variants: {
+            size: {
+                1: {
+                    fontSize: '$1',
+                },
+                2: {
+                    fontSize: '$2',
+                },
+                3: {
+                    fontSize: '$3',
+                },
+            },
+        },
+    });
 
   return (
     <>
@@ -32,6 +52,7 @@ export default function Home({ posts,totalPostCount }) {
         }}
       />
       <Banner />
+        <Text as="h1" size="3" css={{color: "green"}}>Ashot</Text>
       <div className="container">
         <div className="row">
           <div className="col-lg-8">
