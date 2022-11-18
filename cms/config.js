@@ -46,7 +46,7 @@ export default {
         name: 'github',
         repo: 'AshotSimonyan/netlifycms-test',
         branch: 'main',
-        base_url: 'https://netlifycms-ashot.vercel.app/'
+        // base_url: 'https://netlifycms-ashot.vercel.app/'
     },
     load_config_file: false,
     media_folder: 'public/images',
