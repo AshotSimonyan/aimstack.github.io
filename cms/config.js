@@ -45,7 +45,7 @@ export default {
     backend: {
         name: 'github',
         repo: 'AshotSimonyan/netlifycms-test',
-        branch: 'main',
+        branch: 'test',
         base_url: 'https://netlifycms-ashot.vercel.app/',
         // auth_endpoint: 'api/auth'
     },
