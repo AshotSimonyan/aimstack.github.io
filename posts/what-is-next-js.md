@@ -94,7 +94,7 @@ cd path // make sure you same folder other wish no use
 npm run dev  // that cmd open create server and run your default browser http://localhost:3000/
 ```
 
-Start the ****development**** server. After Try ****editing**** `pages/index.js` and see the ****result**** on your ****browser****.
+Start the ****development**** server. After Try ****editing**** `pages/blog.js` and see the ****result**** on your ****browser****.
 
 ## Note:
 

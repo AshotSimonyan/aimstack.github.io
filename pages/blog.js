@@ -1,13 +1,12 @@
 import { NextSeo } from 'next-seo';
 import Post from '../components/Post'
-import Banner from "../components/Banner";
 import Sidebar from "../components/Sidebar"
 import { sortByDate, ImageUrl,pageCount } from '../utils'
 import { allPosts } from "contentlayer/generated";
 import { pick } from "@contentlayer/client";
 import Pagnation from '../components/Pagnation';
 import { show_per_page } from "../config"
-import {styled} from "../stitches.config";
+import {styled} from "../styles";
 
 export default function Home({ posts,totalPostCount }) {
 
@@ -51,7 +50,6 @@ export default function Home({ posts,totalPostCount }) {
           site_name: 'Rajdeep Singh',
         }}
       />
-      <Banner />
         <Text as="h1" size="3" css={{color: "green"}}>Ashot</Text>
       <div className="container">
         <div className="row">

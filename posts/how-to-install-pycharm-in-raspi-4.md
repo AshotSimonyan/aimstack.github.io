@@ -14,7 +14,7 @@ id: 8
 
 Hey!, Everyone my name is Rajdeep Singh. Welcome again to my new post on Raspberry pi 4.In this post, We Learn How to install Pycharm Community Version On Raspberry pi 4.
 
-**Watch This video after following my articles steps:**
+**Watch This video after following my articles stepsConfig:**
 
 <iframe width="356" height="200" src="https://www.youtube.com/embed/jAjwzkEDrgI?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

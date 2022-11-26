@@ -1,5 +1,4 @@
 import Post from '../components/Post'
-import Banner from "../components/Banner";
 import { useRouter } from 'next/router'
 import { NextSeo } from 'next-seo';
 import { allPosts } from "contentlayer/generated";
@@ -50,7 +49,6 @@ export default function Search() {
                     site_name: 'Rajdeep Singh',
                 }}
             />
-            <Banner />
             <div className="container">
                 <div className="row">
 

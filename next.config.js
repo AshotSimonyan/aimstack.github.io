@@ -2,6 +2,16 @@ const {withContentlayer} = require('next-contentlayer')
 
 const nextconfig = {
     reactStrictMode: true,
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'aim-netlify-image.s3.amazonaws.com',
+                port: '',
+                // pathname: '/account123/**',
+            },
+        ],
+    },
     // images: {
     //     loader: "akamai",
     //     path: "",

@@ -45,7 +45,7 @@ Create an `next.config.js` At the root of your project
 
 ## Default:
 
-default config use for import CSS Global stylesheet in custom _app.js
+default config use for import CSS Global stylesheet in custom _app.tsx
 
 ```javascript
 const withCSS = require('@zeit/next-css')
@@ -67,13 +67,13 @@ cssModules: true  // After true than use import statement in next.js
 
 ## How To add Global CSS:
 
-When you create your app, help with npm. in the next step, you create a global app. If you npm official command the by default app create in your project and import your Global CSS file in next.js custom _app.js
+When you create your app, help with npm. in the next step, you create a global app. If you npm official command the by default app create in your project and import your Global CSS file in next.js custom _app.tsx
 
 ```javascript
 import '../styles.css'
 or
 import '../styles.scss'
-// This default export is required in a new `pages/_app.js` file.
+// This default export is required in a new `pages/_app.tsx` file.
 export default function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />
 }

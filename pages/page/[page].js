@@ -1,6 +1,5 @@
 import { NextSeo } from 'next-seo';
 import Post from '../../components/Post'
-import Banner from "../../components/Banner";
 import Sidebar from "../../components/Sidebar"
 import { sortByDate, ImageUrl,pageCount } from '../../utils'
 
@@ -32,7 +31,6 @@ export default function Home({ posts,totalPostCount }) {
           site_name: 'Rajdeep Singh',
         }}
       />
-      <Banner />
       <div className="container">
         <div className="row">
           <div className="col-lg-8">
@@ -56,7 +54,7 @@ export async function getStaticPaths() {
  //  help of pick get require filter value
   // const posts = allPosts.map((post) => pick(post, ["title", "date", "slug", "description", "draft", "image", "tags", "categories"]));
 
- 
+
   // count how many pages
   let totalPostCount = pageCount(allPosts.length)
 
@@ -68,8 +66,8 @@ export async function getStaticPaths() {
   let paths=[]
 
   pageIntoArray.map(
-    path =>   paths.push({ 
-      params: { page: `${path + 1}` } 
+    path =>   paths.push({
+      params: { page: `${path + 1}` }
     })
   )
 
@@ -78,12 +76,12 @@ export async function getStaticPaths() {
     paths,
     fallback: false,
   }
-  
+
 
 }
 
 
-// fetch all posts 
+// fetch all posts
 export async function getStaticProps({params}) {
 
 //   help of pick get require filter value
@@ -114,14 +112,14 @@ let totalPosts;
 
 if(Number(params.page) == 1 ){
   totalPosts = publish.slice(show_per_page, show_per_page)
-} 
+}
 if(Number(params.page) == 2 ){
- 
+
   totalPosts = publish.slice(show_per_page, show_per_page*params.page)
-} 
+}
 
 if (Number(params.page) >  2) {
-                              
+
   totalPosts = publish.slice(show_per_page*params.page - show_per_page, show_per_page*params.page)
 }
 
