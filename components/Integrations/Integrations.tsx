@@ -3,35 +3,52 @@ import {useKeenSlider} from "keen-slider/react";
 import Image from "next/image";
 import "keen-slider/keen-slider.min.css"
 import integrationsList from "./inetgrationsList";import Link from 'next/link'
+import {useState} from "react";
 
 
 const Integrations = () => {
+    const [state, setState] = useState(false);
     const [ref] = useKeenSlider<HTMLDivElement>({
         loop: true,
         mode: "free",
         slides: {
             perView: 8,
-            spacing: 200,
+            spacing: 220,
         },
+        created: () => setState(true),
         breakpoints: {
-            "(max-width: 1440px)": {
-                slides: { perView: 8, spacing: 90 },
+            "(max-width: 1920px)": {
+                slides: { perView: 8, spacing: 120 },
+            },
+            "(max-width: 1439px)": {
+                slides: { perView: 8, spacing: 96 },
+            },
+            "(max-width: 1199px)": {
+                slides: { perView: 7, spacing: 80 },
+            },
+            "(max-width: 743px)": {
+                slides: { perView: 5, spacing: 60 },
+            },
+            "(max-width: 575px)": {
+                slides: { perView: 4, spacing: 60 },
             },
         }
     })
+
     return (
         <IntegrationsStyle>
-            <Slider ref={ref} className="keen-slider">
-                {
-                    integrationsList.map(({name, url}) => {
-                        return (
-                            <SliderItem key={name} className='keen-slider__slide' href={url} target='_blank' rel='noopener noreferrer'>
-                                <Image src={`/images/static/integrations/${name}.png`}  alt='AimStack' width={100} height={100} layout="responsive"/>
-                            </SliderItem>
-                        )
-                })
-                }
-            </Slider>
+                <Slider ref={ref} className="keen-slider" css={{opacity: state ? 1 : 0, transition: '$main'}}>
+                    {
+                        integrationsList.map(({name, url}) => {
+                            return (
+                                <SliderItem key={name} className='keen-slider__slide' href={url} target='_blank' rel='noopener noreferrer'>
+                                    <Image src={`/images/static/integrations/${name}.png`}  alt={name} width={100} height={100} layout="responsive"/>
+                                </SliderItem>
+                            )
+                        })
+                    }
+                </Slider>
+
         </IntegrationsStyle>
     );
 };

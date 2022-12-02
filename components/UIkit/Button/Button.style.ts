@@ -8,25 +8,40 @@ const ButtonStyle = styled("button", {
     lineHeight: 1,
     cursor: "pointer",
     borderRadius: "$1",
-    px: "$6",
     display: 'inline-block',
-
-    '&.a' : {
-
-    },
 
     variants: {
         size: {
             1: {
                 height: '53px',
                 lineHeight: '53px',
-                fontSize: "$6",
+                fontSize: "$3",
+                px: "$6",
+
+                '@bp1': {
+                    height: '50px',
+                    lineHeight: '50px',
+                }
+            },
+            2: {
+                height: '32px',
+                lineHeight: '32px',
+                fontSize: "$1",
+                px: "$2",
             }
         },
         variant: {
             primary: {
                 backgroundColor: "$primary",
                 color: "$white",
+                "&:hover": {
+                    // backgroundColor: "$primaryDark"
+                }
+            },
+            outline: {
+                backgroundColor: "$white",
+                color: "$textColor",
+                border: "1px solid $grey",
                 "&:hover": {
                     // backgroundColor: "$primaryDark"
                 }

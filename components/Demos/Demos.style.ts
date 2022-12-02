@@ -1,18 +1,30 @@
 import {styled} from "styles";
 
-const DemoStyle = styled("section", {
+const DemosStyle = styled("section", {
     padding: '44px 0 100px',
     backgroundColor: '$darkBlue',
-    color: '$white'
+    color: '$white',
+
+    '@bp1': {
+        padding: '44px 0 26px',
+    }
 })
 
-const DemoList = styled("ul", {
+const DemosList = styled("ul", {
     display: 'flex',
     flexWrap: 'wrap',
     marginLeft: '-24px',
+
+    '@bp1': {
+        marginLeft: '-54px',
+    },
+
+    '@bp3': {
+        marginLeft: '0',
+    }
 })
 
-const DemoItem = styled("li", {
+const DemosItem = styled("li", {
     width: 'calc((100% / 4) - 24px)',
     marginLeft: '24px',
     marginBottom: '24px',
@@ -36,7 +48,18 @@ const DemoItem = styled("li", {
     '& img': {
         display: 'block',
         borderRadius: '$1 $1 0 0',
+    },
+
+    '@bp1': {
+        width: 'calc((100% / 2) - 54px)',
+        marginLeft: '54px',
+        marginBottom: '54px',
+    },
+    '@bp3': {
+        width: '100%',
+        marginLeft: '0',
+        marginBottom: '24px',
     }
 })
 
-export {DemoStyle, DemoList, DemoItem}
+export {DemosStyle, DemosList, DemosItem}

@@ -17,13 +17,13 @@ export default function Home({ posts,totalPostCount }) {
         variants: {
             size: {
                 1: {
-                    fontSize: '$1',
+                    fontSize: '$10',
                 },
                 2: {
-                    fontSize: '$2',
+                    fontSize: '$9',
                 },
                 3: {
-                    fontSize: '$3',
+                    fontSize: '$8',
                 },
             },
         },

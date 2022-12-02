@@ -1,10 +1,10 @@
-interface IDemo {
+interface IDemos {
     name: string,
     title: string,
     description: string,
     url: string
 }
-const demoList: IDemo[] = [
+const demosList: IDemos[] = [
     {
         name: 'machine-translation',
         title: 'Machine translation',
@@ -31,4 +31,4 @@ const demoList: IDemo[] = [
     }
 ]
 
-export default demoList
+export default demosList

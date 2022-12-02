@@ -1,35 +1,53 @@
-export const navList = [
+interface ISocialList{
+    icon: 'slack' | 'twitter' | 'linkedIn' | 'fb',
+    url: string,
+}
+
+interface INavList {
+    title: string,
+    to: string,
+    external: boolean
+}
+
+export const navList: INavList[] = [
     {
         title: "GitHub",
-        to: "#gitHub",
+        to: "https://github.com/aimhubio/aim",
+        external: true,
     },
     {
         title: "Quick start",
-        to: "#quick-start",
+        to: "/#quick-start",
+        external: false,
     },
     {
         title: "Features",
-        to: "#features",
+        to: "/#features",
+        external: false,
     },
     {
         title: "Demos",
-        to: "#demos",
+        to: "/#demos",
+        external: false,
     },
     {
         title: "Docs",
-        to: "#docs",
+        to: "https://aimstack.readthedocs.io/en/latest/",
+        external: true,
     },
     {
         title: "Roadmap",
-        to: "#roadmap",
+        to: "https://github.com/aimhubio/aim#roadmap",
+        external: true,
     },
     {
         title: "Blog",
-        to: "#blog",
+        to: "/blog",
+        external: false,
     },
 ]
 
-export const socialList = [
+export const socialList: ISocialList[] = [
     {
         icon: 'slack',
         url: 'https://aimstack.slack.com/ssb/redirect#/shared-invite/email'

@@ -1,7 +1,6 @@
-import {FooterStyle, FooterTop, FooterBottom, Left, Right, FooterList, Logo, FooterSocial} from "./Footer.style";
+import {FooterStyle, FooterTop, FooterBottom, FooterList, Logo, FooterSocial} from "./Footer.style";
 import {Container, Text} from "styles/Foundations";
 import Link from "next/link";
-import Image from "next/image";
 import {Icon} from "components/UIkit";
 import {navList, socialList} from "../Layout/config";
 
@@ -10,11 +9,13 @@ const Footer = () => {
     return (
         <FooterStyle>
             <Container>
-                <FooterTop css={{}}>
-                    <Left>
-                        <Logo css={{marginRight: '36px'}}>
+                <FooterTop>
+                        <Logo>
                             <Link href="/" className='logo' >
-                                <Icon name='aim' color='white' size={26}/>
+                                <picture>
+                                    <source media="(max-width: 1199px)" srcSet="/images/static/main/aim-logo-resp.svg"/>
+                                    <img src="/images/static/main/aim-logo.svg" alt="Aimstack"/>
+                                </picture>
                             </Link>
                         </Logo>
                         <FooterList>
@@ -26,8 +27,6 @@ const Footer = () => {
                                 )
                             })}
                         </FooterList>
-                    </Left>
-                    <Right>
                         <FooterSocial>
                             {socialList.map(({ icon, url }) => {
                                 return (
@@ -39,10 +38,9 @@ const Footer = () => {
                                 )
                             })}
                         </FooterSocial>
-                    </Right>
                 </FooterTop>
                 <FooterBottom>
-                    <Text size='8'>Copyright © 2022 Aimstack</Text>
+                    <Text size={1}>Copyright © 2022 Aimstack</Text>
                 </FooterBottom>
             </Container>
 

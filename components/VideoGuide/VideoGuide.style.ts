@@ -1,8 +1,14 @@
 import {styled} from "styles";
 
 const VideoGuideStyle = styled("section", {
-    paddingTop: "64px",
-    paddingBottom: "150px",
+    padding: "64px 0 150px",
+
+    '@bp1': {
+        padding: "44px 0 80px",
+    },
+    '@bp2': {
+        padding: "24px 0 60px",
+    }
 })
 const VideoWrapper = styled("div", {
     paddingBottom: "62.5%",

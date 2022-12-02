@@ -12,6 +12,7 @@ class MyDocument extends Document {
         return (
             <Html>
                 <Head>
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/>
                 <script async src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
                     <style id="stitches" dangerouslySetInnerHTML={{ __html: getCssText() }} />
                 </Head>

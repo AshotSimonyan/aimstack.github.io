@@ -13,15 +13,11 @@ export const reset = {
     "*[hidden]": {
         display: "none",
     },
-    body: {
-        lineHeight: "1",
+    "*": {
+        boxSizing: 'border-box',
     },
     "ol, ul": {
         listStyle: "none",
-    },
-    "a": {
-        textDecoration: "none",
-        color: "inherit"
     },
     "blockquote, q": {
         quotes: "none",
@@ -34,4 +30,7 @@ export const reset = {
     table: {
         borderSpacing: "0",
     },
+    strong: {
+        fontWeight: '$5'
+    }
 };

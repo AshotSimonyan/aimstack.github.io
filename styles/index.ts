@@ -2,16 +2,12 @@ import {createStitches} from '@stitches/react';
 import theme from "./theme";
 import utils from "./utils";
 import global from "./global";
+import media from "./media";
 
-export const {styled, getCssText, globalCss} = createStitches({
+export const {styled, getCssText, globalCss, keyframes} = createStitches({
     theme: theme,
     utils: utils,
-    media: {
-        bp1: '(max-width: 1199px)',
-        bp2: '(max-width: 991px)',
-        bp3: '(max-width: 767px)',
-        bp4: '(max-width: 767px)',
-    },
+    media: media
 });
 
 const globalStyles = globalCss(global)

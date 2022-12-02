@@ -1,20 +1,21 @@
 import React from 'react';
-import {WhyUseAimStyle, StepRow, Left, Right, ButtonLink} from './WhyUseAim.style';
+import {FeaturesStyle, StepRow, Left, Right, ButtonLink} from './Features.style';
 import {Text, Container} from "styles/Foundations";
 import {Icon} from "components/UIkit";
 import stepsList from "./stepsConfig";
 import Image from "next/image";
 
-const WhyUseAim = () => {
+const Features = () => {
     return (
-        <WhyUseAimStyle>
+        <FeaturesStyle id='features'>
             <Container>
-                <Text as='h2' size={1} css={{textAlign: 'center', marginBottom: '100px'}}>Why use Aim?</Text>
+                <Text as='h2' size={9} className='title'>Why use Aim?</Text>
                 {stepsList.map(({name, title, list}) => {
                     return (
                         <StepRow key={name}>
+                            <Text className='title-mobile' as='h4' size={6} css={{marginBottom: '$6', '& strong': {fontWeight: '$5'}}} dangerouslySetInnerHTML={{ __html: title }}/>
                             <Left>
-                                <Text size={4} css={{marginBottom: '$6', '& strong': {fontFamily: '$OpenSans800'}}} dangerouslySetInnerHTML={{ __html: title }}/>
+                                <Text className='title-desktop' as='h4' size={6} css={{marginBottom: '$6', '& strong': {fontWeight: '$5'}}} dangerouslySetInnerHTML={{ __html: title }}/>
                                 <ul>
                                     {list.map((item, index) => {
                                         return (
@@ -22,11 +23,10 @@ const WhyUseAim = () => {
                                         )
                                     })}
                                 </ul>
-                                <ButtonLink href='https://github.com/aimhubio/aim' target='_blank' css={{marginTop: '$6'}}>
+                                <ButtonLink href='https://github.com/aimhubio/aim' target='_blank' css={{marginTop: '$6', fontWeight: '$3'}}>
                                     Check out our Github
                                     <Icon name='arrow' size={24} />
                                 </ButtonLink>
-
 
 
                             </Left>
@@ -40,8 +40,8 @@ const WhyUseAim = () => {
 
             </Container>
 
-        </WhyUseAimStyle>
+        </FeaturesStyle>
     );
 };
 
-export default WhyUseAim;
+export default Features;

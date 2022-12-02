@@ -18,9 +18,10 @@ const Layout: FC<ILayout> = ({children}) => {
             <Image
                 className='bg-top'
                 layout="fill"
-                objectFit='cover'
+                objectFit='contain'
                 objectPosition='top'
                 src={'/images/static/main/main-bg.png'}
+                priority
                 alt={''}
             />
             <Wrapper>
@@ -37,10 +38,12 @@ const Layout: FC<ILayout> = ({children}) => {
             </Wrapper>
 
             <Image
-                className='bg-top'
-                layout="fill"
-                objectFit='cover'
-                objectPosition='bottom'
+                className='bg-bottom'
+                // layout="fill"
+                width={2000}
+                height={3000}
+                objectFit='contain'
+                objectPosition='center -240px'
                 src={'/images/static/main/lines-bg.png'}
                 alt={''}
             />

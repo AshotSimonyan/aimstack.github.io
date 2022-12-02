@@ -81,7 +81,7 @@ export default function MyApp({ Component, pageProps }) {
 
 ***
 
-# Demo:
+# Demos:
 
 <iframe width="924" height="500" src="https://codesandbox.io/embed/add-css-innextjs-8pdds?from-embed" style="border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 

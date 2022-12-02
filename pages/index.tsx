@@ -2,9 +2,9 @@ import React from 'react';
 import Hero from "components/Hero/Hero";
 import Integrations from "components/Integrations/Integrations";
 import VideoGuide from "components/VideoGuide/VideoGuide";
-import WhyUseAim from "components/WhyUseAim/WhyUseAim";
-import Demo from "components/Demo/Demo";
-import GetStarted from "components/GetStarted/GetStarted";
+import Features from "components/Features/Features";
+import Demos from "components/Demos/Demos";
+import QuickStart from "components/QuickStart/QuickStart";
 import Subscribe from "components/Subscribe/Subscribe";
 
 const Index = () => {
@@ -13,9 +13,9 @@ const Index = () => {
             <Hero/>
             <Integrations/>
             <VideoGuide/>
-            <GetStarted/>
-            <WhyUseAim/>
-            <Demo/>
+            <QuickStart/>
+            <Features/>
+            <Demos/>
             <Subscribe/>
         </div>
     );
