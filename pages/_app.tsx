@@ -1,21 +1,20 @@
-import Head from "next/head";
+import Head from 'next/head';
 import { DefaultSeo } from 'next-seo';
 import SEO from '../next-seo.config';
-import Layout from "components/Layout/Layout";
-
+import Layout from 'components/Layout/Layout';
 
 const App = ({ Component, pageProps }) => {
-
-  return ( <>
-    <Head>
+  return (
+    <>
+      <Head>
         <title>AimStack</title>
-    </Head>
+      </Head>
       <DefaultSeo {...SEO} />
       <Layout>
-          <Component teeest={'asd'}  {...pageProps} />
+        <Component teeest={'asd'} {...pageProps} />
       </Layout>
+    </>
+  );
+};
 
-  </>)
-}
-
-export default App
+export default App;

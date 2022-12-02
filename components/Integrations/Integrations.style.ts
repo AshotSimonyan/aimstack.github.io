@@ -1,16 +1,14 @@
-import {styled} from "styles";
+import { styled } from 'styles';
 
-const IntegrationsStyle = styled("section", {
-    py: '50px',
-    backgroundColor: '$white500',
-    boxShadow: '$1'
-})
-const Slider = styled("div", {
+const IntegrationsStyle = styled('section', {
+  py: '50px',
+  backgroundColor: '$white500',
+  boxShadow: '$1',
+});
+const Slider = styled('div', {});
+const SliderItem = styled('a', {
+  display: 'flex',
+  alignItems: 'center',
+});
 
-})
-const SliderItem = styled("a", {
-    display: 'flex',
-    alignItems: 'center',
-})
-
-export {IntegrationsStyle, Slider, SliderItem}
+export { IntegrationsStyle, Slider, SliderItem };

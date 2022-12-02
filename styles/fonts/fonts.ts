@@ -1,9 +1,7 @@
-import {Open_Sans} from "@next/font/google";
+import { Open_Sans } from '@next/font/google';
 
 const OpenSans = Open_Sans({
-    subsets: ['latin'],
-})
+  subsets: ['latin'],
+});
 
-export {OpenSans}
-
-
+export { OpenSans };

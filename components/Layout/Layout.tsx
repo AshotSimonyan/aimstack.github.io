@@ -1,54 +1,47 @@
-import React, {FC, ReactNode} from 'react';
-import {LayoutStyle, Wrapper} from "./Layout.style";
-import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
-import {useRouter} from "next/router";
-import Image from "next/image";
-
+import React, { FC, ReactNode } from 'react';
+import { LayoutStyle, Wrapper } from './Layout.style';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
+import { useRouter } from 'next/router';
+import Image from 'next/image';
 
 interface ILayout {
-    children: ReactNode
+  children: ReactNode;
 }
-const Layout: FC<ILayout> = ({children}) => {
-    const router = useRouter()
-    const admin = router?.pathname === '/admin'
+const Layout: FC<ILayout> = ({ children }) => {
+  const router = useRouter();
+  const admin = router?.pathname === '/admin';
 
-    return (
-        <LayoutStyle>
-            <Image
-                className='bg-top'
-                layout="fill"
-                objectFit='contain'
-                objectPosition='top'
-                src={'/images/static/main/main-bg.png'}
-                priority
-                alt={''}
-            />
-            <Wrapper>
-                {
-                    !admin &&
-                    <Header/>
-                }
-                {children}
+  return (
+    <LayoutStyle>
+      <Image
+        className="bg-top"
+        layout="fill"
+        objectFit="contain"
+        objectPosition="top"
+        src={'/images/static/main/main-bg.png'}
+        priority
+        alt={''}
+      />
+      <Wrapper>
+        {!admin && <Header />}
+        {children}
 
-                {
-                    !admin &&
-                    <Footer />
-                }
-            </Wrapper>
+        {!admin && <Footer />}
+      </Wrapper>
 
-            <Image
-                className='bg-bottom'
-                // layout="fill"
-                width={2000}
-                height={3000}
-                objectFit='contain'
-                objectPosition='center -240px'
-                src={'/images/static/main/lines-bg.png'}
-                alt={''}
-            />
-        </LayoutStyle>
-    );
+      <Image
+        className="bg-bottom"
+        // layout="fill"
+        width={2000}
+        height={3000}
+        objectFit="contain"
+        objectPosition="center -240px"
+        src={'/images/static/main/lines-bg.png'}
+        alt={''}
+      />
+    </LayoutStyle>
+  );
 };
 
 export default Layout;

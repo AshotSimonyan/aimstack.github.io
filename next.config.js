@@ -1,28 +1,27 @@
-const {withContentlayer} = require('next-contentlayer')
+const { withContentlayer } = require('next-contentlayer');
 
 const nextconfig = {
-    reactStrictMode: true,
-    images: {
-        remotePatterns: [
-            {
-                protocol: 'https',
-                hostname: 'aim-netlify-image.s3.amazonaws.com',
-                port: '',
-                // pathname: '/account123/**',
-            },
-        ],
-    },
-    // images: {
-    //     loader: "akamai",
-    //     path: "",
-    // },
-    // basePath: "/netlifycms-test",
-    // assetPrefix: "/netlifycms-test",
-    disableImportAliasWarning: true,
-}
+  reactStrictMode: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'aim-netlify-image.s3.amazonaws.com',
+        port: '',
+        // pathname: '/account123/**',
+      },
+    ],
+  },
+  // images: {
+  //     loader: "akamai",
+  //     path: "",
+  // },
+  // basePath: "/netlifycms-test",
+  // assetPrefix: "/netlifycms-test",
+  disableImportAliasWarning: true,
+};
 
-
-module.exports = withContentlayer(nextconfig)
+module.exports = withContentlayer(nextconfig);
 
 // const {withContentlayer} = require('next-contentlayer')
 //

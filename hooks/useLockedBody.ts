@@ -1,39 +1,39 @@
-import { useEffect, useLayoutEffect, useState } from "react"
+import { useEffect, useLayoutEffect, useState } from 'react';
 
 export const useLockedBody = (initialLocked = false) => {
-  const [locked, setLocked] = useState<boolean>(initialLocked)
+  const [locked, setLocked] = useState<boolean>(initialLocked);
 
   useLayoutEffect(() => {
     if (!locked) {
-      return
+      return;
     }
 
-    const originalOverflow = document.body.style.overflow
-    const originalPaddingRight = document.body.style.paddingRight
+    const originalOverflow = document.body.style.overflow;
+    const originalPaddingRight = document.body.style.paddingRight;
 
-    document.body.style.overflow = "hidden"
+    document.body.style.overflow = 'hidden';
 
-    const root = document.getElementById("root")
-    const scrollBarWidth = root ? root.offsetWidth - root.scrollWidth : 0
+    const root = document.getElementById('root');
+    const scrollBarWidth = root ? root.offsetWidth - root.scrollWidth : 0;
 
     if (scrollBarWidth) {
-      document.body.style.paddingRight = `${scrollBarWidth}px`
+      document.body.style.paddingRight = `${scrollBarWidth}px`;
     }
 
     return () => {
-      document.body.style.overflow = originalOverflow
+      document.body.style.overflow = originalOverflow;
 
       if (scrollBarWidth) {
-        document.body.style.paddingRight = originalPaddingRight
+        document.body.style.paddingRight = originalPaddingRight;
       }
-    }
-  }, [locked])
+    };
+  }, [locked]);
 
   useEffect(() => {
     if (locked !== initialLocked) {
-      setLocked(initialLocked)
+      setLocked(initialLocked);
     }
-  }, [initialLocked])
+  }, [initialLocked]);
 
-  return [locked, setLocked] as const
-}
+  return [locked, setLocked] as const;
+};
