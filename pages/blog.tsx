@@ -10,10 +10,55 @@ import { pick } from '@contentlayer/client';
 import Pagnation from '../components/Pagination/Pagnation';
 import { show_per_page } from '../config';
 import { BlogStyle } from 'styles/pages/Blog.style';
+import { useRouter } from 'next/router';
 
-export default function Home({ posts, totalPostCount }) {
+export default function Blog() {
 
-  console.log(allPosts);
+  const router = useRouter()
+  const params = router.query
+  const posts = allPosts.map((post) =>
+    pick(post, [
+      'title',
+      'date',
+      'slug',
+      'description',
+      'draft',
+      'image',
+      'tags',
+      'categories',
+    ])
+  );
+
+  // sort article base on  date
+  let postSortByDate = posts.sort(sortByDate);
+
+  // filter publish posts
+  const publish = postSortByDate.filter((post, i) => {
+    // return post.draft === false;
+    return !post.draft;
+  });
+
+  // count how many pages
+  let totalPostCount = pageCount(allPosts.length);
+
+  //  get only first ten post
+  // let totalPosts = publish.slice(0, show_per_page);
+  let totalPosts = publish.slice(0, show_per_page);
+  
+
+  if (Number(params.page) === 2) {
+    totalPosts = publish.slice(show_per_page, show_per_page * params.page);
+    console.log('mtav 2');
+  }
+
+  if (Number(params.page) > 2) {
+    totalPosts = publish.slice(
+      show_per_page * params.page - show_per_page,
+      show_per_page * params.page
+    );
+    console.log('mtav 3');
+  }
+
 
   return (
     <BlogStyle>
@@ -42,49 +87,27 @@ export default function Home({ posts, totalPostCount }) {
           Recent Articles
         </Text>
 
-        <BlogList blog={posts}/>
+        <BlogList blog={totalPosts}/>
         <Pagnation totalPostCount={totalPostCount} />
       </Container>
     </BlogStyle>
   );
 }
 
-// fetch first ten posts
-export async function getStaticProps() {
-  //  help of pick get require filter value
-  console.log(allPosts);
-  const posts = allPosts.map((post) =>
-    pick(post, [
-      'title',
-      'date',
-      'slug',
-      'description',
-      'draft',
-      'image',
-      'tags',
-      'categories',
-    ])
-  );
-
-  // sort article base on  date
-  let postSortByDate = posts.sort(sortByDate);
-
-  // filter publish posts
-  const publish = postSortByDate.filter((post, i) => {
-    // return post.draft === false;
-    return !post.draft;
-  });
-
-  // count how many pages
-  let totalPostCount = pageCount(allPosts.length);
-
-  //  get only first ten post
-  let totalPosts = publish.slice(0, show_per_page);
-
-  return {
-    props: {
-      posts: totalPosts,
-      totalPostCount,
-    },
-  };
-}
+// // fetch first ten posts
+// export async function getStaticProps() {
+//   //  help of pick get require filter value
+//   console.log(allPosts);
+//
+//
+//
+//
+//
+//
+//   return {
+//     props: {
+//       posts: totalPosts,
+//       totalPostCount,
+//     },
+//   };
+// }

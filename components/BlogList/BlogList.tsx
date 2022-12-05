@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 
 const BlogList = ({ blog }) => {
-  console.log(blog);
+  // console.log(blog);
   return (
     <BlogListStyle>
       {

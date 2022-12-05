@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 
 const Card = (props) => {
-  console.log(props);
+  // console.log(props);
   return (
     <CardStyle>
       <ImageWrapper>
