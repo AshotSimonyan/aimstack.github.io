@@ -11,18 +11,23 @@ interface ILayout {
 const Layout: FC<ILayout> = ({ children }) => {
   const router = useRouter();
   const admin = router?.pathname === '/admin';
+  const home = router?.pathname === '/';
 
   return (
     <LayoutStyle>
-      <Image
-        className="bg-top"
-        layout="fill"
-        objectFit="contain"
-        objectPosition="top"
-        src={'/images/static/main/main-bg.png'}
-        priority
-        alt={''}
-      />
+      {
+        home &&
+        <Image
+          className="bg-top"
+          layout="fill"
+          objectFit="contain"
+          objectPosition="top"
+          src={'/images/static/main/main-bg.png'}
+          priority
+          alt={''}
+        />
+      }
+
       <Wrapper>
         {!admin && <Header />}
         {children}
@@ -30,16 +35,20 @@ const Layout: FC<ILayout> = ({ children }) => {
         {!admin && <Footer />}
       </Wrapper>
 
-      <Image
-        className="bg-bottom"
-        // layout="fill"
-        width={2000}
-        height={3000}
-        objectFit="contain"
-        objectPosition="center -240px"
-        src={'/images/static/main/lines-bg.png'}
-        alt={''}
-      />
+      {
+        home &&
+        <Image
+          className="bg-bottom"
+          // layout="fill"
+          width={2000}
+          height={3000}
+          objectFit="contain"
+          objectPosition="center -240px"
+          src={'/images/static/main/lines-bg.png'}
+          alt={''}
+        />
+      }
+
     </LayoutStyle>
   );
 };

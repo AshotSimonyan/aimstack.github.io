@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { PaginationStyle } from './Pagnation.style';
 
 function Pagnation({ totalPostCount }) {
   let router = useRouter();
@@ -15,8 +16,9 @@ function Pagnation({ totalPostCount }) {
 
   let pageIntoArray = Array.from(Array(totalPostCount).keys());
 
+  console.log(totalPostCount);
   return (
-    <nav aria-label=" my-6">
+    <PaginationStyle>
       <ul className="pagination justify-content-center">
         {pageIntoArray.map((page) => {
           return (
@@ -31,7 +33,7 @@ function Pagnation({ totalPostCount }) {
           );
         })}
       </ul>
-    </nav>
+    </PaginationStyle>
   );
 }
 

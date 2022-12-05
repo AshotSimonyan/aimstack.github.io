@@ -24,6 +24,10 @@ const Header = () => {
     setDrawerOpened(!drawerOpened);
     setLocked(!locked);
   };
+  const handleDrawerClose = () => {
+    setDrawerOpened(false);
+    setLocked(false);
+  };
 
   return (
     <HeaderStyle className={drawerOpened ? 'open' : ''}>
@@ -46,7 +50,7 @@ const Header = () => {
                   return (
                     <li key={to}>
                       <Link
-                        onClick={handleDrawerToggle}
+                        onClick={handleDrawerClose}
                         href={to}
                         scroll={false}
                         target={external ? '_blank' : '_self'}

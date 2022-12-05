@@ -21,6 +21,8 @@ const theme: Theme = {
     red: '#CC231A',
     lightGrey: '#F4F7F9',
     grey: '#CFD3D6',
+    darkGrey: '#737379',
+    darkGreyHover: '#393940',
 
     primary: '$blue',
     secondary: '$green',

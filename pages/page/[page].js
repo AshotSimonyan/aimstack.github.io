@@ -1,12 +1,13 @@
 import { NextSeo } from 'next-seo';
-import Post from '../../components/Post';
-import Sidebar from '../../components/Sidebar';
+import { Text, Container } from 'styles/Foundations';
 import { sortByDate, ImageUrl, pageCount } from '../../utils';
 
 import { allPosts } from 'contentlayer/generated';
 import { pick } from '@contentlayer/client';
-import Pagnation from '../../components/Pagnation';
+import Pagnation from '../../components/Pagination/Pagnation';
 import { show_per_page } from '../../config';
+import BlogList from '../../components/BlogList/BlogList';
+import React from 'react';
 
 export default function Home({ posts, totalPostCount }) {
   return (
@@ -30,18 +31,14 @@ export default function Home({ posts, totalPostCount }) {
           site_name: 'Rajdeep Singh',
         }}
       />
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-8">
-            {JSON.parse(posts).map((post) => (
-              <Post key={post.slug} post={post} />
-            ))}
-          </div>
+      <Container>
+        <Text as="h1" size={8} className="title" css={{textAlign: 'center', my: '$10'}}>
+          Recent Articles
+        </Text>
 
-          <Sidebar />
-        </div>
-      </div>
-      <Pagnation totalPostCount={totalPostCount} />
+        <BlogList blog={JSON.parse(posts)}/>
+        <Pagnation totalPostCount={totalPostCount} />
+      </Container>
     </>
   );
 }
@@ -103,10 +100,10 @@ export async function getStaticProps({ params }) {
 
   let totalPosts;
 
-  if (Number(params.page) == 1) {
+  if (Number(params.page) === 1) {
     totalPosts = publish.slice(show_per_page, show_per_page);
   }
-  if (Number(params.page) == 2) {
+  if (Number(params.page) === 2) {
     totalPosts = publish.slice(show_per_page, show_per_page * params.page);
   }
 

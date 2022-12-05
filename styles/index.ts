@@ -8,6 +8,7 @@ export const { styled, getCssText, globalCss, keyframes } = createStitches({
   theme: theme,
   utils: utils,
   media: media,
+
 });
 
 const globalStyles = globalCss(global);
