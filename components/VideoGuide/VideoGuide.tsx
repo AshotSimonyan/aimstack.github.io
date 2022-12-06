@@ -8,6 +8,7 @@ const VideoGuide = () => {
       <Container>
         <VideoWrapper>
           <iframe
+            loading="lazy"
             src="https://www.youtube.com/embed/EC2j2sudxOc"
             title="YouTube video player"
             frameBorder="0"

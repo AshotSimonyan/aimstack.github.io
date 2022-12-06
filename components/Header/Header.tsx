@@ -78,7 +78,7 @@ const Header = () => {
               {socialList.map(({ icon, url }) => {
                 return (
                   <li key={icon} onClick={() => {}}>
-                    <a href={url} rel="noopener noreferrer" target="_blank">
+                    <a href={url} rel="noopener noreferrer" target="_blank" aria-label={icon}>
                       <Icon name={icon} />
                     </a>
                   </li>

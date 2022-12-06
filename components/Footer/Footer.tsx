@@ -23,7 +23,7 @@ const Footer = () => {
                   media="(max-width: 1199px)"
                   srcSet="/images/static/main/aim-logo-resp.svg"
                 />
-                <img src="/images/static/main/aim-logo.svg" alt="Aimstack" />
+                <img height={26} width={26} src="/images/static/main/aim-logo.svg" alt="Aimstack" />
               </picture>
             </Link>
           </Logo>
@@ -46,7 +46,7 @@ const Footer = () => {
             {socialList.map(({ icon, url }) => {
               return (
                 <li key={icon}>
-                  <a href={url} rel="noopener noreferrer" target="_blank">
+                  <a href={url} rel="noopener noreferrer" target="_blank" aria-label={icon}>
                     <Icon name={icon} color="white" />
                   </a>
                 </li>
