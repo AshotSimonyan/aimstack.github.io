@@ -1,5 +1,5 @@
 import { DemosStyle, DemosList, DemosItem } from './Demos.style';
-import { Text, Container } from 'styles/Foundations';
+import { Text, Container } from 'styles/foundations';
 import React from 'react';
 import demosList from './demosList';
 import Image from 'next/image';

@@ -1,6 +1,6 @@
 import React from 'react';
 import { VideoGuideStyle, VideoWrapper } from './VideoGuide.style';
-import { Container } from 'styles/Foundations';
+import { Container } from 'styles/foundations';
 
 const VideoGuide = () => {
   return (

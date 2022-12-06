@@ -10,7 +10,7 @@ import {
   ButtonMenu,
   MobileSocial,
 } from './Header.style';
-import { Container } from 'styles/Foundations';
+import { Container } from 'styles/foundations';
 import Image from 'next/image';
 import { navList, socialList } from '../Layout/config';
 import { useLockedBody } from 'hooks/useLockedBody';

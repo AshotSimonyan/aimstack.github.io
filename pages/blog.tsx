@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, Container } from 'styles/Foundations';
+import { Text, Container } from 'styles/foundations';
 import { NextSeo } from 'next-seo';
 import BlogList from 'components/BlogList/BlogList';
 import { sortByDate, ImageUrl, pageCount } from '../utils';

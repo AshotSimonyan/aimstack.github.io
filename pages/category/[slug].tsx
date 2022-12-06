@@ -1,6 +1,6 @@
 import { slugify, ImageUrl, titleCase } from 'utils';
 import { NextSeo } from 'next-seo';
-import { Text, Container } from 'styles/Foundations';
+import { Text, Container } from 'styles/foundations';
 import { allPosts } from 'contentlayer/generated';
 import BlogList from 'components/BlogList/BlogList';
 import Pagination from 'components/Pagination/Pagnation';

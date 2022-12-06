@@ -1,6 +1,6 @@
 import React from 'react';
 import { HeroStyle, HeroContent } from './Hero.style';
-import { Text, Container } from 'styles/Foundations';
+import { Text, Container } from 'styles/foundations';
 import { Button } from 'components/UIkit';
 
 const Hero = () => {

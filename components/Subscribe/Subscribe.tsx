@@ -1,6 +1,6 @@
 import React from 'react';
 import { SubscribeStyle, SubscribeInner, Left, Right } from './Subscribe.style';
-import { Container, Text } from 'styles/Foundations';
+import { Container, Text } from 'styles/foundations';
 import { Button, Input } from 'components/UIkit';
 import Image from 'next/image';
 

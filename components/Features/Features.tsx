@@ -6,7 +6,7 @@ import {
   Right,
   ButtonLink,
 } from './Features.style';
-import { Text, Container } from 'styles/Foundations';
+import { Text, Container } from 'styles/foundations';
 import { Icon } from 'components/UIkit';
 import stepsList from './stepsConfig';
 import Image from 'next/image';

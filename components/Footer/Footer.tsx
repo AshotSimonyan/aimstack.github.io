@@ -6,7 +6,7 @@ import {
   Logo,
   FooterSocial,
 } from './Footer.style';
-import { Container, Text } from 'styles/Foundations';
+import { Container, Text } from 'styles/foundations';
 import Link from 'next/link';
 import { Icon } from 'components/UIkit';
 import { navList, socialList } from '../Layout/config';

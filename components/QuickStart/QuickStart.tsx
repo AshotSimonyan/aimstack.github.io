@@ -6,7 +6,7 @@ import {
   Right,
 } from './QuickStart.style';
 import CodeBlock from './CodeBlock';
-import { Container, Text } from 'styles/Foundations';
+import { Container, Text } from 'styles/foundations';
 
 const QuickStart = () => {
   return (

@@ -6,7 +6,7 @@ import {
   CardFooter,
   ImageWrapper,
 } from './Card.style';
-import { Text } from 'styles/Foundations';
+import { Text } from 'styles/foundations';
 import Image from 'next/image';
 import { Icon } from 'components/UIkit';
 import Link from 'next/link';

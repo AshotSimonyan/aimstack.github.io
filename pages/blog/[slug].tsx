@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { NextSeo } from 'next-seo';
-import { Text, Container } from 'styles/Foundations';
+import { Text, Container } from 'styles/foundations';
 import { Icon } from 'components/UIkit';
 
 import { allPosts } from 'contentlayer/generated';
