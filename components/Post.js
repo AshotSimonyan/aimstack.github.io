@@ -6,7 +6,6 @@ export default function Post({ post }) {
   const date = new Date(post.date);
   return (
     <div className="card mb-4">
-
       <a href={`/blog/${post.slug}`}>
         <Image
           src={post.image}

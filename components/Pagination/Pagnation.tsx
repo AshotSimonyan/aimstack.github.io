@@ -4,7 +4,6 @@ import { PaginationStyle, PaginationList } from './Pagnation.style';
 import { Icon } from '../UIkit';
 
 const Pagination = ({ currentPage, totalPostCount, pathname }) => {
-
   /*
  pages give number,base on number we create a array. base on array we map a list elements
  totalPostCount = 3
@@ -18,21 +17,23 @@ const Pagination = ({ currentPage, totalPostCount, pathname }) => {
   return (
     <PaginationStyle>
       <PaginationList>
-        {
-          currentPage > 1 &&
+        {currentPage > 1 && (
           <li>
             <Link
-              href={{ pathname: `/${pathname}`, query: { page: currentPage - 1 } }}
+              href={{
+                pathname: `/${pathname}`,
+                query: { page: currentPage - 1 },
+              }}
             >
-              <Icon name='chevron-left' />
+              <Icon name="chevron-left" />
             </Link>
           </li>
-        }
+        )}
 
         {pageIntoArray.map((page) => {
-          console.log({page});
+          console.log({ page });
           return (
-            <li key={page} >
+            <li key={page}>
               <Link
                 href={{ pathname: `/${pathname}`, query: { page: page + 1 } }}
                 className={currentPage === page + 1 ? 'active' : ''}
@@ -42,19 +43,21 @@ const Pagination = ({ currentPage, totalPostCount, pathname }) => {
             </li>
           );
         })}
-        {
-          currentPage < pageIntoArray.length &&
+        {currentPage < pageIntoArray.length && (
           <li>
             <Link
-              href={{ pathname: `/${pathname}`, query: { page:currentPage + 1 } }}
+              href={{
+                pathname: `/${pathname}`,
+                query: { page: currentPage + 1 },
+              }}
             >
-              <Icon name='chevron-right'/>
+              <Icon name="chevron-right" />
             </Link>
           </li>
-        }
+        )}
       </PaginationList>
     </PaginationStyle>
   );
-}
+};
 
 export default Pagination;

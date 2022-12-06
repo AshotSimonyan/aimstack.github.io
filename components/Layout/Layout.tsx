@@ -15,8 +15,7 @@ const Layout: FC<ILayout> = ({ children }) => {
 
   return (
     <LayoutStyle>
-      {
-        home &&
+      {home && (
         <Image
           className="bg-top"
           layout="fill"
@@ -26,7 +25,7 @@ const Layout: FC<ILayout> = ({ children }) => {
           priority
           alt={''}
         />
-      }
+      )}
 
       <Wrapper>
         {!admin && <Header />}
@@ -35,8 +34,7 @@ const Layout: FC<ILayout> = ({ children }) => {
         {!admin && <Footer />}
       </Wrapper>
 
-      {
-        home &&
+      {home && (
         <Image
           className="bg-bottom"
           // layout="fill"
@@ -47,8 +45,7 @@ const Layout: FC<ILayout> = ({ children }) => {
           src={'/images/static/main/lines-bg.png'}
           alt={''}
         />
-      }
-
+      )}
     </LayoutStyle>
   );
 };

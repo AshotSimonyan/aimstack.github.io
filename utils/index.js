@@ -24,7 +24,9 @@ export function ImageUrl(url) {
   return SITE_URL + url;
 }
 
-
 export function titleCase(str) {
-  return str.replace(/(^\w)/g, g => g[0].toUpperCase()).replace(/([-_]\w)/g, g => " " + g[1].toUpperCase()).trim();
+  return str
+    .replace(/(^\w)/g, (g) => g[0].toUpperCase())
+    .replace(/([-_]\w)/g, (g) => ' ' + g[1].toUpperCase())
+    .trim();
 }

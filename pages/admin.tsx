@@ -4,7 +4,6 @@ import config from 'cms/config';
 const CMS = dynamic(
   () =>
     import('netlify-cms-app').then((cms) => {
-
       // @ts-ignore
       cms.init({ config });
     }) as any,

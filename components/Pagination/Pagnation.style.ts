@@ -1,7 +1,7 @@
 import { styled } from 'styles';
 
 const PaginationStyle = styled('nav', {
-  my: '$10'
+  my: '$10',
 });
 
 const PaginationList = styled('ul', {
@@ -9,7 +9,7 @@ const PaginationList = styled('ul', {
   alignItems: 'center',
   justifyContent: 'center',
 
-  'li': {
+  li: {
     height: '44px',
     width: '44px',
     fontSize: '$1',
@@ -17,7 +17,7 @@ const PaginationList = styled('ul', {
     textAlign: 'center',
     marginRight: '$1',
 
-    'a': {
+    a: {
       display: 'block',
       lineHeight: '44px',
 
@@ -32,11 +32,10 @@ const PaginationList = styled('ul', {
         },
         '.icon': {
           fill: '$primary',
-        }
-      }
-
+        },
+      },
     },
-  }
+  },
 });
 
 export { PaginationStyle, PaginationList };

@@ -7,14 +7,13 @@ import Pagination from 'components/Pagination/Pagnation';
 import React from 'react';
 import { useRouter } from 'next/router';
 
-
 export default function Category({ posts }) {
-  const router = useRouter()
+  const router = useRouter();
   console.log(router);
-  const params = router.query
-  const pathname = '/category/' + router.query.slug
+  const params = router.query;
+  const pathname = '/category/' + router.query.slug;
   console.log(pathname);
-  const page = Number(params.page) || 1
+  const page = Number(params.page) || 1;
   return (
     <>
       <NextSeo
@@ -39,12 +38,21 @@ export default function Category({ posts }) {
       />
 
       <Container>
-        <Text as="h1" size={6} className="title" css={{textAlign: 'center', my: '$10'}}>
+        <Text
+          as="h1"
+          size={6}
+          className="title"
+          css={{ textAlign: 'center', my: '$10' }}
+        >
           Category: {titleCase(router.query.slug)}
         </Text>
 
-        <BlogList blogList={posts}/>
-        <Pagination currentPage={page} pathname={pathname} totalPostCount={posts} />
+        <BlogList blogList={posts} />
+        <Pagination
+          currentPage={page}
+          pathname={pathname}
+          totalPostCount={posts}
+        />
       </Container>
     </>
   );

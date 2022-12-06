@@ -12,7 +12,7 @@ const BlogListStyle = styled('ul', {
   '@bp3': {
     marginLeft: '0',
   },
-})
+});
 const BlogItem = styled('li', {
   width: 'calc((100% / 3) - 40px)',
   marginLeft: '40px',
@@ -32,7 +32,6 @@ const BlogItem = styled('li', {
     marginLeft: '0',
     marginBottom: '48px',
   },
-})
+});
 
-export {BlogListStyle, BlogItem}
-
+export { BlogListStyle, BlogItem };

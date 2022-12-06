@@ -11,12 +11,11 @@ import { BlogStyle } from 'styles/pages/Blog.style';
 import { useRouter } from 'next/router';
 
 export default function Blog() {
-
-  const router = useRouter()
+  const router = useRouter();
   console.log(router);
-  const params = router.query
-  const pathname = router.pathname
-  const page = Number(params.page) || 1
+  const params = router.query;
+  const pathname = router.pathname;
+  const page = Number(params.page) || 1;
   const posts = allPosts.map((post) =>
     pick(post, [
       'title',
@@ -45,7 +44,6 @@ export default function Blog() {
   //  get only first ten post
   let totalPosts = publish.slice(0, show_per_page);
 
-
   if (page === 2) {
     totalPosts = publish.slice(show_per_page, show_per_page * page);
   }
@@ -56,7 +54,6 @@ export default function Blog() {
       show_per_page * page
     );
   }
-
 
   return (
     <BlogStyle>
@@ -81,12 +78,21 @@ export default function Blog() {
         }}
       />
       <Container>
-        <Text as="h1" size={6} className="title" css={{textAlign: 'center', my: '$10'}}>
+        <Text
+          as="h1"
+          size={6}
+          className="title"
+          css={{ textAlign: 'center', my: '$10' }}
+        >
           Recent Articles
         </Text>
 
-        <BlogList blogList={totalPosts}/>
-        <Pagination pathname={pathname} currentPage={page} totalPostCount={totalPostCount} />
+        <BlogList blogList={totalPosts} />
+        <Pagination
+          pathname={pathname}
+          currentPage={page}
+          totalPostCount={totalPostCount}
+        />
       </Container>
     </BlogStyle>
   );

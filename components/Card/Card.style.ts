@@ -1,18 +1,16 @@
 import { styled } from 'styles';
 
-const CardStyle = styled('div', {
-
-})
+const CardStyle = styled('div', {});
 
 const ImageWrapper = styled('div', {
   position: 'relative',
   height: '0',
-  paddingBottom: '65%'
-})
+  paddingBottom: '65%',
+});
 
 const CardContent = styled('div', {
-  paddingTop: '$6'
-})
+  paddingTop: '$6',
+});
 
 const Category = styled('div', {
   marginBottom: '$2',
@@ -22,20 +20,19 @@ const Category = styled('div', {
 
   '.icon': {
     marginRight: '$1',
-    fill: '$grey'
-  }
-
-})
+    fill: '$grey',
+  },
+});
 
 const CardFooter = styled('div', {
   display: 'flex',
   alignItems: 'center',
-  justifyContent:'space-between',
+  justifyContent: 'space-between',
 
   '.icon': {
     marginRight: '$1',
-    fill: '$grey'
-  }
-})
+    fill: '$grey',
+  },
+});
 
-export {CardStyle, CardContent, Category, CardFooter, ImageWrapper}
+export { CardStyle, CardContent, Category, CardFooter, ImageWrapper };

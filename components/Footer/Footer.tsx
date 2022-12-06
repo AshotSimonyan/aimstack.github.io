@@ -36,7 +36,7 @@ const Footer = () => {
                     scroll={false}
                     target={external ? '_blank' : '_self'}
                   >
-                  {title}
+                    {title}
                   </Link>
                 </li>
               );
