@@ -38,6 +38,13 @@ const TextStyle = styled('p', {
           fontSize: '$4'
         }
       },
+      7: {
+        fontSize: '$7',
+        fontWeight: '$2',
+        '@bp2': {
+          fontSize: '$6'
+        }
+      },
       8: {
         fontSize: '$8',
         fontWeight: '$5',

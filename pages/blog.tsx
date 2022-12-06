@@ -1,13 +1,11 @@
 import React from 'react';
 import { Text, Container } from 'styles/Foundations';
 import { NextSeo } from 'next-seo';
-import Post from '../components/Post';
 import BlogList from 'components/BlogList/BlogList';
-import Sidebar from '../components/Sidebar';
 import { sortByDate, ImageUrl, pageCount } from '../utils';
 import { allPosts } from 'contentlayer/generated';
 import { pick } from '@contentlayer/client';
-import Pagnation from '../components/Pagination/Pagnation';
+import Pagination from '../components/Pagination/Pagnation';
 import { show_per_page } from '../config';
 import { BlogStyle } from 'styles/pages/Blog.style';
 import { useRouter } from 'next/router';
@@ -15,7 +13,10 @@ import { useRouter } from 'next/router';
 export default function Blog() {
 
   const router = useRouter()
+  console.log(router);
   const params = router.query
+  const pathname = router.pathname
+  const page = Number(params.page) || 1
   const posts = allPosts.map((post) =>
     pick(post, [
       'title',
@@ -42,21 +43,18 @@ export default function Blog() {
   let totalPostCount = pageCount(allPosts.length);
 
   //  get only first ten post
-  // let totalPosts = publish.slice(0, show_per_page);
   let totalPosts = publish.slice(0, show_per_page);
-  
 
-  if (Number(params.page) === 2) {
-    totalPosts = publish.slice(show_per_page, show_per_page * params.page);
-    console.log('mtav 2');
+
+  if (page === 2) {
+    totalPosts = publish.slice(show_per_page, show_per_page * page);
   }
 
-  if (Number(params.page) > 2) {
+  if (page > 2) {
     totalPosts = publish.slice(
-      show_per_page * params.page - show_per_page,
-      show_per_page * params.page
+      show_per_page * page - show_per_page,
+      show_per_page * page
     );
-    console.log('mtav 3');
   }
 
 
@@ -83,31 +81,13 @@ export default function Blog() {
         }}
       />
       <Container>
-        <Text as="h1" size={8} className="title" css={{textAlign: 'center', my: '$10'}}>
+        <Text as="h1" size={6} className="title" css={{textAlign: 'center', my: '$10'}}>
           Recent Articles
         </Text>
 
-        <BlogList blog={totalPosts}/>
-        <Pagnation totalPostCount={totalPostCount} />
+        <BlogList blogList={totalPosts}/>
+        <Pagination pathname={pathname} currentPage={page} totalPostCount={totalPostCount} />
       </Container>
     </BlogStyle>
   );
 }
-
-// // fetch first ten posts
-// export async function getStaticProps() {
-//   //  help of pick get require filter value
-//   console.log(allPosts);
-//
-//
-//
-//
-//
-//
-//   return {
-//     props: {
-//       posts: totalPosts,
-//       totalPostCount,
-//     },
-//   };
-// }

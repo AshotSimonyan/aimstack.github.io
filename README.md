@@ -8,11 +8,11 @@ In nextjs we provide sitemap, SEO, pagination and Search support and deploy with
 3. To start local develpoment server run ` npm run dev`
 
 ## Note 
-change your ` localhost:3000 ` url in `./config.js` url and as well `show_per_page` post number on blog.
+change your ` localhost:3000 ` url in `./config.ts` url and as well `show_per_page` post number on blog.
 
 
 ```javascript
-// config.js
+// config.ts
 
 const SITE_URL= 'https://ephemeral-rolypoly-2f9988.netlify.app'
 

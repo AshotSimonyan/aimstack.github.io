@@ -3,7 +3,7 @@ import { styled } from 'styles';
 const BlogListStyle = styled('ul', {
   display: 'flex',
   flexWrap: 'wrap',
-  marginLeft: '-32px',
+  marginLeft: '-40px',
 
   '@bp1': {
     marginLeft: '-54px',
@@ -14,9 +14,13 @@ const BlogListStyle = styled('ul', {
   },
 })
 const BlogItem = styled('li', {
-  width: 'calc((100% / 3) - 32px)',
-  marginLeft: '24px',
-  marginBottom: '24px',
+  width: 'calc((100% / 3) - 40px)',
+  marginLeft: '40px',
+  marginBottom: '40px',
+
+  // '&:first-child': {
+  //   width: '100%',
+  // },
 
   '@bp1': {
     width: 'calc((100% / 2) - 54px)',

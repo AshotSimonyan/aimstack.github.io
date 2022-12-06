@@ -1,10 +1,20 @@
-import ItemPost from '../../components/ItemPost';
-import { slugify, ImageUrl } from '../../utils';
+import { slugify, ImageUrl, titleCase } from 'utils';
 import { NextSeo } from 'next-seo';
-
+import { Text, Container } from 'styles/Foundations';
 import { allPosts } from 'contentlayer/generated';
+import BlogList from 'components/BlogList/BlogList';
+import Pagination from 'components/Pagination/Pagnation';
+import React from 'react';
+import { useRouter } from 'next/router';
+
 
 export default function Category({ posts }) {
+  const router = useRouter()
+  console.log(router);
+  const params = router.query
+  const pathname = '/category/' + router.query.slug
+  console.log(pathname);
+  const page = Number(params.page) || 1
   return (
     <>
       <NextSeo
@@ -28,15 +38,14 @@ export default function Category({ posts }) {
         }}
       />
 
-      <div className="container my-3">
-        <div className="row">
-          <div className="col-lg-10 post-date m-1 p-2m-auto">
-            {posts.map((post, index) => {
-              return <ItemPost key={index} post={post} />;
-            })}
-          </div>
-        </div>
-      </div>
+      <Container>
+        <Text as="h1" size={6} className="title" css={{textAlign: 'center', my: '$10'}}>
+          Category: {titleCase(router.query.slug)}
+        </Text>
+
+        <BlogList blogList={posts}/>
+        <Pagination currentPage={page} pathname={pathname} totalPostCount={posts} />
+      </Container>
     </>
   );
 }
@@ -46,7 +55,7 @@ export async function getStaticPaths() {
 
   // get all category paths
   allPosts.map((post) => {
-    if (post.draft === false) {
+    if (!!post.draft === false) {
       post.categories.map((category) => {
         const slug = slugify(category);
         paths.push({ params: { slug } });
@@ -65,7 +74,7 @@ export async function getStaticProps({ params: { slug } }) {
 
   // get all category posts base on slug
   const post = allPosts.map((post) => {
-    if (post.draft === false) {
+    if (!!post.draft === false) {
       post.categories.filter((category) => {
         const categorySlug = slugify(category);
         if (categorySlug === slug) {

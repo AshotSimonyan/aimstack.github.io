@@ -28,10 +28,16 @@ const Footer = () => {
             </Link>
           </Logo>
           <FooterList>
-            {navList.map(({ to, title }) => {
+            {navList.map(({ to, title, external }) => {
               return (
                 <li key={to} onClick={() => {}}>
+                  <Link
+                    href={to}
+                    scroll={false}
+                    target={external ? '_blank' : '_self'}
+                  >
                   {title}
+                  </Link>
                 </li>
               );
             })}
@@ -39,7 +45,7 @@ const Footer = () => {
           <FooterSocial>
             {socialList.map(({ icon, url }) => {
               return (
-                <li key={icon} onClick={() => {}}>
+                <li key={icon}>
                   <a href={url} rel="noopener noreferrer" target="_blank">
                     <Icon name={icon} color="white" />
                   </a>
@@ -49,7 +55,7 @@ const Footer = () => {
           </FooterSocial>
         </FooterTop>
         <FooterBottom>
-          <Text size={1}>Copyright © 2022 Aimstack</Text>
+          <Text size={1}>Copyright © {new Date().getFullYear()} Aimstack</Text>
         </FooterBottom>
       </Container>
     </FooterStyle>

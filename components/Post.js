@@ -1,13 +1,12 @@
 import Link from 'next/link';
-import { slugify, ImageUrl } from '../utils';
+import { slugify } from '../utils';
 import Image from 'next/image';
 
 export default function Post({ post }) {
   const date = new Date(post.date);
   return (
     <div className="card mb-4">
-      {/*<a href={`/blog/${post.slug}`} > <img className="card-img-top" src={ImageUrl(post.image)} alt={post.title} /></a>*/}
-      {/*aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa*/}
+
       <a href={`/blog/${post.slug}`}>
         <Image
           src={post.image}

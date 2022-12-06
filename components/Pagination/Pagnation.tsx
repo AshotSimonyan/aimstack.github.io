@@ -1,10 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { PaginationStyle } from './Pagnation.style';
+import { PaginationStyle, PaginationList } from './Pagnation.style';
+import { Icon } from '../UIkit';
 
-function Pagnation({ totalPostCount }) {
-  let router = useRouter();
+const Pagination = ({ currentPage, totalPostCount, pathname }) => {
 
   /*
  pages give number,base on number we create a array. base on array we map a list elements
@@ -16,26 +15,46 @@ function Pagnation({ totalPostCount }) {
 
   let pageIntoArray = Array.from(Array(totalPostCount).keys());
 
-  // console.log(totalPostCount);
   return (
     <PaginationStyle>
-      <ul className="pagination justify-content-center">
+      <PaginationList>
+        {
+          currentPage > 1 &&
+          <li>
+            <Link
+              href={{ pathname: `/${pathname}`, query: { page: currentPage - 1 } }}
+            >
+              <Icon name='chevron-left' />
+            </Link>
+          </li>
+        }
+
         {pageIntoArray.map((page) => {
+          console.log({page});
           return (
-            <li key={page} className="page-item p-2">
-              {/*<Link*/}
-              {/*  href={page === 0 ? '/' : `/page/${page + 1}`}*/}
-              {/*  className="page-link"*/}
-              {/*>*/}
-              {/*  {page + 1}*/}
-              {/*</Link>*/}
-              <Link href={{ pathname: '/blog', query: { page: page + 1 } }}>{page + 1}</Link>
+            <li key={page} >
+              <Link
+                href={{ pathname: `/${pathname}`, query: { page: page + 1 } }}
+                className={currentPage === page + 1 ? 'active' : ''}
+              >
+                {page + 1}
+              </Link>
             </li>
           );
         })}
-      </ul>
+        {
+          currentPage < pageIntoArray.length &&
+          <li>
+            <Link
+              href={{ pathname: `/${pathname}`, query: { page:currentPage + 1 } }}
+            >
+              <Icon name='chevron-right'/>
+            </Link>
+          </li>
+        }
+      </PaginationList>
     </PaginationStyle>
   );
 }
 
-export default Pagnation;
+export default Pagination;

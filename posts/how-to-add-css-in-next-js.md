@@ -41,7 +41,7 @@ yarn add @zeit/next-css
 
 ***
 
-Create an `next.config.js` At the root of your project
+Create an `next.config.ts` At the root of your project
 
 ## Default:
 

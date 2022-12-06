@@ -7,7 +7,6 @@ import Link from 'next/link';
 
 
 const Card = (props) => {
-  // console.log(props);
   return (
     <CardStyle>
       <ImageWrapper>
@@ -15,9 +14,6 @@ const Card = (props) => {
           <Image
             src={props.image}
             alt={props.title}
-            title=''
-            // width='620'
-            // height='350'
             layout='fill'
             objectFit='contain'
             objectPosition='top'
@@ -29,7 +25,7 @@ const Card = (props) => {
         <Category>
           <Icon name='folder' size={14} />
           <Text size={1}>
-            <Link href={`/category/${props.category}`}>
+            <Link href={`/category/${props.categories[0]}`}>
               {props.categories[0]}
             </Link>
           </Text>{/*TODO change array to string*/}
@@ -40,7 +36,7 @@ const Card = (props) => {
             {props.title}
           </Link>
         </Text>
-        <Text className='title' lineClamp css={{ my: '$6', $$lineClamp: 3 }}>
+        <Text size={1} className='title' lineClamp css={{ my: '$6', $$lineClamp: 3 }}>
           {props.description}
         </Text>
         <CardFooter>

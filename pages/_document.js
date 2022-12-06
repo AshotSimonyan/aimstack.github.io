@@ -19,7 +19,7 @@ class MyDocument extends Document {
           <script
             async
             src="https://identity.netlify.com/v1/netlify-identity-widget.js"
-          ></script>
+          />
           <style
             id="stitches"
             dangerouslySetInnerHTML={{ __html: getCssText() }}
