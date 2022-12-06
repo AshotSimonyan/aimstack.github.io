@@ -38,5 +38,5 @@ export function formattedDate(date) {
     day: 'numeric',
     month: 'short',
     year: 'numeric',
-  })
+  });
 }

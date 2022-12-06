@@ -11,7 +11,6 @@ import { useRouter } from 'next/router';
 
 export default function Blog() {
   const router = useRouter();
-  console.log(router);
   const params = router.query;
   const pathname = router.pathname;
   const page = Number(params.page) || 1;

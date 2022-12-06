@@ -99,5 +99,5 @@ export const Flex = styled('div', {
     justify: 'start',
     wrap: 'noWrap',
   },
-})
-export default Flex
+});
+export default Flex;

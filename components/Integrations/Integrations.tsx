@@ -5,12 +5,11 @@ import 'keen-slider/keen-slider.min.css';
 import integrationsList from './inetgrationsList';
 import { useMemo, useState } from 'react';
 
-
 const Integrations = () => {
   const [state, setState] = useState(false);
 
   const animation = useMemo(() => {
-    return { duration: 10000, easing: (t: number) => t }
+    return { duration: 10000, easing: (t: number) => t };
   }, []);
 
   const [ref] = useKeenSlider<HTMLDivElement>({
@@ -22,13 +21,13 @@ const Integrations = () => {
     },
     created(s) {
       setState(true);
-      s.moveToIdx(5, true, animation)
+      s.moveToIdx(5, true, animation);
     },
     updated(s) {
-      s.moveToIdx(s.track.details.abs + 5, true, animation)
+      s.moveToIdx(s.track.details.abs + 5, true, animation);
     },
     animationEnded(s) {
-      s.moveToIdx(s.track.details.abs + 5, true, animation)
+      s.moveToIdx(s.track.details.abs + 5, true, animation);
     },
     breakpoints: {
       '(max-width: 1920px)': {

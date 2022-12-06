@@ -34,12 +34,12 @@ export const InnerHTML = styled('div', {
     marginBottom: '$5',
     paddingLeft: '$10',
     listStyleType: 'disc',
-    fontSize: "$3",
+    fontSize: '$3',
     li: {
       '&:not(:last-child)': {
         marginBottom: '$2',
-      }
-    }
+      },
+    },
   },
 
   a: {
@@ -47,8 +47,8 @@ export const InnerHTML = styled('div', {
     wordBreak: 'break-all',
 
     '&:hover': {
-      color: '$primary'
-    }
+      color: '$primary',
+    },
   },
 
   img: {
@@ -56,35 +56,35 @@ export const InnerHTML = styled('div', {
     height: 'auto',
   },
   strong: {
-    fontWeight: '$4'
+    fontWeight: '$4',
   },
 
   blockquote: {
-    paddingLeft: "$9",
-    borderLeft: "2px solid $grey",
+    paddingLeft: '$9',
+    borderLeft: '2px solid $grey',
     fontSize: '$2',
   },
 
   'em, q': {
-    fontStyle: 'italic'
+    fontStyle: 'italic',
   },
 
   pre: {
-    fontSize: "$1",
+    fontSize: '$1',
     lineHeight: 1.7,
-    overflow: "auto",
-    whiteSpace: "pre",
-    wordBreak: "normal",
-    margin: "0 0 $5",
-    padding: "$10",
-    color: "$darkGreyHover",
-    backgroundColor: "$lightGrey",
-    border: "none",
-    borderRadius: "2px"
+    overflow: 'auto',
+    whiteSpace: 'pre',
+    wordBreak: 'normal',
+    margin: '0 0 $5',
+    padding: '$10',
+    color: '$darkGreyHover',
+    backgroundColor: '$lightGrey',
+    border: 'none',
+    borderRadius: '2px',
   },
   code: {
-    whiteSpace: "pre-wrap",
-  }
-})
+    whiteSpace: 'pre-wrap',
+  },
+});
 
-export default InnerHTML
+export default InnerHTML;

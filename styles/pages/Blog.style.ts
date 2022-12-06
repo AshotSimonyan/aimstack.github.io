@@ -6,8 +6,8 @@ const ImageWrapper = styled('div', {
   position: 'relative',
 
   img: {
-    position: 'static !important'
-  }
+    position: 'static !important',
+  },
 });
 
 const PostNavigation = styled('div', {
@@ -24,11 +24,11 @@ const PostNavigation = styled('div', {
     },
     '&:hover': {
       '.text': {
-        color: '$primary'
-      }
-    }
-  }
-})
+        color: '$primary',
+      },
+    },
+  },
+});
 
 const Prev = styled('div', {
   flex: 1,
@@ -45,13 +45,12 @@ const Prev = styled('div', {
       '.chevron-text': {
         transform: 'translateX(15px)',
         '@bp2': {
-          transform: 'translateX(0)'
+          transform: 'translateX(0)',
         },
-      }
-    }
-  }
-
-})
+      },
+    },
+  },
+});
 const Next = styled('div', {
   flex: 1,
   textAlign: 'right',
@@ -67,12 +66,11 @@ const Next = styled('div', {
       '.chevron-text': {
         transform: 'translateX(-15px)',
         '@bp2': {
-          transform: 'translateX(0)'
+          transform: 'translateX(0)',
         },
       },
-
-    }
-  }
-})
+    },
+  },
+});
 
 export { BlogSingleStyle, ImageWrapper, PostNavigation, Prev, Next };

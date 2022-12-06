@@ -9,10 +9,8 @@ import { useRouter } from 'next/router';
 
 export default function Category({ posts }) {
   const router = useRouter();
-  console.log(router);
   const params = router.query;
   const pathname = '/category/' + router.query.slug;
-  console.log(pathname);
   const page = Number(params.page) || 1;
   return (
     <>

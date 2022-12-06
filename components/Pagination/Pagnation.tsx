@@ -31,7 +31,6 @@ const Pagination = ({ currentPage, totalPostCount, pathname }) => {
         )}
 
         {pageIntoArray.map((page) => {
-          console.log({ page });
           return (
             <li key={page}>
               <Link
