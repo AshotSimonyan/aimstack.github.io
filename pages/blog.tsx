@@ -7,7 +7,6 @@ import { allPosts } from 'contentlayer/generated';
 import { pick } from '@contentlayer/client';
 import Pagination from '../components/Pagination/Pagnation';
 import { show_per_page } from '../config';
-import { BlogStyle } from 'styles/pages/Blog.style';
 import { useRouter } from 'next/router';
 
 export default function Blog() {
@@ -56,7 +55,7 @@ export default function Blog() {
   }
 
   return (
-    <BlogStyle>
+    <div>
       <NextSeo
         title="MLOps Blog | AimStack"
         description="Aimstack's recent news on everything ML best practices and MLOps tools. Find the latest releases, tutorials, guides and industry news."
@@ -94,6 +93,6 @@ export default function Blog() {
           totalPostCount={totalPostCount}
         />
       </Container>
-    </BlogStyle>
+    </div>
   );
 }

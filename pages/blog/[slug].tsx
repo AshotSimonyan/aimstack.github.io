@@ -1,17 +1,24 @@
+import React from 'react';
 import Link from 'next/link';
 import { NextSeo } from 'next-seo';
-import { Text, Container } from 'styles/foundations';
-import { Icon } from 'components/UIkit';
+import { Text, Container, Flex, InnerHTML } from 'styles/foundations';
+import { BlogSingleStyle, ImageWrapper, PostNavigation, Prev, Next } from 'styles/pages/Blog.style';
+import { formattedDate } from 'utils';
 
+import { Icon } from 'components/UIkit';
 import { allPosts } from 'contentlayer/generated';
 import Image from 'next/image';
-import React from 'react';
 
-export default function PostPage({ post }) {
-  const date = new Date(post.date);
+export default function PostPage({ post, posts }) {
 
+  console.log(posts);
+
+  const index = posts.findIndex(object => {
+    return object.slug === post.slug;
+  });
+  console.log(index);
   return (
-    <>
+    <BlogSingleStyle>
       <NextSeo
         title={post.title}
         description={post.description}
@@ -23,7 +30,7 @@ export default function PostPage({ post }) {
           article: {
             publishedTime: post.date,
             authors: ['https://officialrajdeepsingh.dev/pages/about'],
-            tags: post.tags,
+            tags: post.tags
           },
           images: [
             {
@@ -31,59 +38,86 @@ export default function PostPage({ post }) {
               width: 1224,
               height: 724,
               alt: post.title,
-              type: 'image/jpeg',
-            },
+              type: 'image/jpeg'
+            }
           ],
-          site_name: 'Rajdeep Singh',
+          site_name: 'Rajdeep Singh'
         }}
       />
       <Container>
-        <div>
-          <Text size={1}>
-            <Icon name="folder" size={14} />
-            <Link href={`/category/${post.categories[0]}`}>
-              {post.categories[0]}
-            </Link>
-          </Text>
-          {/*TODO change array to string*/}
-          <Text>
-            <Icon name="clock" size={14} />
-            {`${
-              date.getMonth() + 1
-            } - ${date.getDate()} - ${date.getFullYear()}`}{' '}
-          </Text>
-          <Text as="h1" size={7} className="title" css={{ my: '$10' }}>
-            {post.title}
-          </Text>
-          {/*<ImageWrapper>*/}
-          <Link href={`/blog/${post.slug}`}>
-            <Image
-              src={post.image}
-              className="card-img-top"
-              alt={post.title}
-              title=""
-              // layout='fill'
-              height={1000}
-              width={1000}
-              objectFit="contain"
-            />
-          </Link>
-          {/*</ImageWrapper>*/}
+        <Flex gap={5} css={{ color: '$darkGrey', marginTop: '$10', '.icon': { fill: '$darkGrey' } }}>
+          <Flex gap={2} align='center'>
+            <Icon name='clock' size={14} />
+            <Text size={1}>
+              {formattedDate(post.date)}
+            </Text>
+          </Flex>
+          <Flex gap={2} align='center'>
+            <Icon name='folder' size={14} />
+            <Text size={1}>
+              <Link href={`/category/${post.categories[0]}`}>
+                {post.categories[0]}{/*TODO change array to string*/}
+              </Link>
+            </Text>
+          </Flex>
+        </Flex>
 
-          <div
-            className="post-body p-5 m-auto"
-            dangerouslySetInnerHTML={{ __html: post.body.html }}
+        <Text as='h1' size={7} className='title' css={{ my: '$6' }}>
+          {post.title}
+        </Text>
+        <ImageWrapper>
+          <Image
+            src={post.image}
+            className='card-img-top'
+            alt={post.title}
+            title={post.title}
+            layout='fill'
+            objectFit='contain'
           />
-        </div>
+        </ImageWrapper>
+
+        <InnerHTML
+          dangerouslySetInnerHTML={{ __html: post.body.html }}
+        />
       </Container>
-    </>
+      <PostNavigation>
+        <Container css={{maxWidth: '848px'}}>
+          <Flex direction={{ '@bp2': 'column' }} gap={{ '@bp2': 10 }}>
+            <Prev>
+              {
+                !!index &&
+                <Link href={`/blog/${posts[index - 1]?.slug}`}>
+                  <Flex align='center'>
+                    <Icon name="chevron-left" />
+                    <Text className='chevron-text' size={1} css={{fontWeight: '$3'}}>PREVIOUS POST</Text>
+                  </Flex>
+                  <Text className='text' size={1} css={{marginTop: '$3'}}>{posts[index - 1]?.title}</Text>
+                </Link>
+              }
+
+            </Prev>
+            <Next>
+              {
+                index < posts.length - 1 &&
+                <Link href={`/blog/${posts[index + 1]?.slug}`}>
+                  <Flex align='center' justify={{ '@initial': 'end', '@bp2': 'start' }}>
+                    <Text className='chevron-text' size={1} css={{fontWeight: '$3'}}>NEXT POST</Text>
+                    <Icon name="chevron-right" />
+                  </Flex>
+                  <Text className='text' size={1} css={{marginTop: '$3'}}>{posts[index + 1]?.title}</Text>
+                </Link>
+              }
+            </Next>
+          </Flex>
+        </Container>
+      </PostNavigation>
+    </BlogSingleStyle>
   );
 }
 
 export async function getStaticPaths() {
   //  filter the post and get the publish post.
   const posts = allPosts.filter((post, i) => {
-    console.log(post.draft);
     return !!post.draft === false;
   });
 
@@ -93,15 +127,20 @@ export async function getStaticPaths() {
   return {
     paths: publish,
     fallback: false,
+
   };
 }
 
 export async function getStaticProps({ params: { slug } }) {
   // fetch a single post by slug
 
+  const posts = allPosts.filter((post, i) => {
+    return !!post.draft === false;
+  });
+
   const post = allPosts.find((post) => {
     return post.slug === slug;
   });
 
-  return { props: { post } };
+  return { props: { post, posts } };
 }

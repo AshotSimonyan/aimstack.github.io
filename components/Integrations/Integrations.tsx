@@ -3,10 +3,16 @@ import { useKeenSlider } from 'keen-slider/react';
 import Image from 'next/image';
 import 'keen-slider/keen-slider.min.css';
 import integrationsList from './inetgrationsList';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
+
 
 const Integrations = () => {
   const [state, setState] = useState(false);
+
+  const animation = useMemo(() => {
+    return { duration: 10000, easing: (t: number) => t }
+  }, []);
+
   const [ref] = useKeenSlider<HTMLDivElement>({
     loop: true,
     mode: 'free',
@@ -14,7 +20,16 @@ const Integrations = () => {
       perView: 8,
       spacing: 220,
     },
-    created: () => setState(true),
+    created(s) {
+      setState(true);
+      s.moveToIdx(5, true, animation)
+    },
+    updated(s) {
+      s.moveToIdx(s.track.details.abs + 5, true, animation)
+    },
+    animationEnded(s) {
+      s.moveToIdx(s.track.details.abs + 5, true, animation)
+    },
     breakpoints: {
       '(max-width: 1920px)': {
         slides: { perView: 8, spacing: 120 },
