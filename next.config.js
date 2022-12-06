@@ -3,8 +3,8 @@ const { withContentlayer } = require('next-contentlayer');
 const nextconfig = {
   reactStrictMode: true,
   images: {
-    loader: "akamai",
-    path: "",
+    // loader: "akamai",
+    // path: "",
     remotePatterns: [
       {
         protocol: 'https',
