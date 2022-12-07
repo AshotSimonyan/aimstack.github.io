@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import GitHubButton from 'react-github-btn';
-import ScrollTo from 'react-scroll-into-view';
 import Link from 'next/link';
 import {
   HeaderStyle,
@@ -50,20 +49,14 @@ const Header = () => {
                 {navList.map(({ to, title, external }) => {
                   return (
                     <li key={to}>
-                      {external ? (
-                        <Link
-                          onClick={handleDrawerClose}
-                          href={to}
-                          scroll={false}
-                          target="_blank"
-                        >
-                          {title}
-                        </Link>
-                      ) : (
-                        <ScrollTo selector={to}>
-                          <span>{title}</span>
-                        </ScrollTo>
-                      )}
+                      <Link
+                        onClick={handleDrawerClose}
+                        href={to}
+                        scroll={false}
+                        target={external ? '_blank' : '_self'}
+                      >
+                        {title}
+                      </Link>
                     </li>
                   );
                 })}
@@ -85,12 +78,7 @@ const Header = () => {
               {socialList.map(({ icon, url }) => {
                 return (
                   <li key={icon} onClick={() => {}}>
-                    <a
-                      href={url}
-                      rel="noopener noreferrer"
-                      target="_blank"
-                      aria-label={icon}
-                    >
+                    <a href={url} rel="noopener noreferrer" target="_blank" aria-label={icon}>
                       <Icon name={icon} />
                     </a>
                   </li>

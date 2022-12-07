@@ -2,6 +2,9 @@ import { reset } from './reset';
 
 const global = {
   ...reset,
+  html: {
+    scrollBehavior: 'smooth',
+  },
   body: {
     background: '$white',
     color: '$textColor',
