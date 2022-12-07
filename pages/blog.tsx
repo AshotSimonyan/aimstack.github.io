@@ -72,7 +72,7 @@ export default function Blog() {
               type: 'image/jpeg',
             },
           ],
-          site_name: 'Rajdeep Singh',
+          site_name: 'Aimstack',
         }}
       />
       <Container>

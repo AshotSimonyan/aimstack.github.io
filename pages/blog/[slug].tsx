@@ -43,7 +43,7 @@ export default function PostPage({ post, posts }) {
               type: 'image/jpeg',
             },
           ],
-          site_name: 'Rajdeep Singh',
+          site_name: 'Aimstack',
         }}
       />
       <Container>
