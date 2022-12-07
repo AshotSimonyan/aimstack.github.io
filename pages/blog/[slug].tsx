@@ -62,7 +62,7 @@ export default function PostPage({ post, posts }) {
           <Flex gap={2} align="center">
             <Icon name="folder" size={14} />
             <Text size={1}>
-              <Link href={`/category/${post.categories[0]}`}>
+              <Link href={`/category/${post.categories[0].toLowerCase()}`}>
                 {post.categories[0]}
                 {/*TODO change array to string*/}
               </Link>

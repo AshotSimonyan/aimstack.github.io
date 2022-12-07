@@ -30,7 +30,7 @@ const Card = (props) => {
         <Category>
           <Icon name="folder" size={14} />
           <Text size={1}>
-            <Link href={`/category/${props.categories[0]}`}>
+            <Link href={`/category/${props.categories[0].toLowerCase()}`}>
               {props.categories[0]}
             </Link>
           </Text>
