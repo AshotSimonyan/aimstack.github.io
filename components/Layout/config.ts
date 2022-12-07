@@ -17,17 +17,17 @@ export const navList: INavList[] = [
   },
   {
     title: 'Quick start',
-    to: '/#quick-start',
+    to: '#quick-start',
     external: false,
   },
   {
     title: 'Features',
-    to: '/#features',
+    to: '#features',
     external: false,
   },
   {
     title: 'Demos',
-    to: '/#demos',
+    to: '#demos',
     external: false,
   },
   {

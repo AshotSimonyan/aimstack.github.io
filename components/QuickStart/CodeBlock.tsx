@@ -17,7 +17,10 @@ const CodeBlock = () => {
   return (
     <CodeBlockStyle>
       <HighlightWrapper>
-        <button onClick={() => handleCopy(firstCode, 1)} aria-label="copy to clipboard">
+        <button
+          onClick={() => handleCopy(firstCode, 1)}
+          aria-label="copy to clipboard"
+        >
           <Icon name="copy" color="white" />
         </button>
         {copied === 1 && (
@@ -29,7 +32,10 @@ const CodeBlock = () => {
       </HighlightWrapper>
 
       <HighlightWrapper>
-        <button onClick={() => handleCopy(secondCode, 2)} aria-label="copy to clipboard">
+        <button
+          onClick={() => handleCopy(secondCode, 2)}
+          aria-label="copy to clipboard"
+        >
           <Icon name="copy" color="white" />
         </button>
         {copied === 2 && (
@@ -53,7 +59,10 @@ for step in range(10):
       </HighlightWrapper>
 
       <HighlightWrapper>
-        <button onClick={() => handleCopy(thirdCode, 3)} aria-label="copy to clipboard">
+        <button
+          onClick={() => handleCopy(thirdCode, 3)}
+          aria-label="copy to clipboard"
+        >
           <Icon name="copy" color="white" />
         </button>
         {copied == 3 && (

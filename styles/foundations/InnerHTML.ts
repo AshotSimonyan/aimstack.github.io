@@ -63,6 +63,7 @@ export const InnerHTML = styled('div', {
     paddingLeft: '$9',
     borderLeft: '2px solid $grey',
     fontSize: '$2',
+    fontStyle: 'italic',
   },
 
   'em, q': {
