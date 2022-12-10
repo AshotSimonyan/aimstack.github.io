@@ -1,10 +1,12 @@
 import { ConfigType } from '@stitches/react/types/config';
-import { OpenSans } from 'styles/fonts/fonts';
+import { OpenSans, LoraFont, InconsolataFont } from 'styles/fonts/fonts';
 import Theme = ConfigType.Theme;
 
 const theme: Theme = {
   fonts: {
     OpenSans: OpenSans.style.fontFamily,
+    Lora: LoraFont.style.fontFamily,
+    Inconsolata: InconsolataFont.style.fontFamily,
     base: '$OpenSans',
   },
   colors: {
@@ -66,6 +68,7 @@ const theme: Theme = {
   shadows: {
     1: '0px 60px 66px -65px rgba(11, 47, 97, 0.2)',
     2: '0px 96px 66px -65px rgba(11, 47, 97, 0.2)',
+    3: 'rgb(231 235 243) 1px 1px 10px 3px'
   },
   radii: {
     1: '6px',

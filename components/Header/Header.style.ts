@@ -1,7 +1,24 @@
-import { styled } from 'styles';
+import { styled, keyframes } from 'styles';
+
+const fixedHeader = keyframes({
+  '0%': { transform: 'translateY(-100%)' },
+  '100%': { transform: 'translateY(0)' },
+});
 
 const HeaderStyle = styled('header', {
   height: '72px',
+
+  '&.fixed': {
+    backgroundColor: '$white',
+    position: "sticky",
+    top: "0px",
+    left: "0px",
+    right: "0px",
+    transform: 'translateY(-100%)',
+    zIndex: 99,
+    animation: `${fixedHeader} 0.2s ease 0.3s forwards`,
+    boxShadow: '$3',
+  }
 });
 const HeaderContent = styled('div', {
   display: 'flex',
@@ -18,10 +35,15 @@ const HeaderNav = styled('nav', {
     display: 'flex',
 
     li: {
-      cursor: 'pointer',
       '&:not(:last-child)': {
         marginRight: '32px',
       },
+
+      a: {
+        '&:hover': {
+          opacity: '.8',
+        }
+      }
     },
   },
 

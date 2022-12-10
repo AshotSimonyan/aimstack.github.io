@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import GitHubButton from 'react-github-btn';
 import Link from 'next/link';
 import {
@@ -19,6 +19,7 @@ import { Icon } from 'components/UIkit';
 const Header = () => {
   const [drawerOpened, setDrawerOpened] = useState<boolean>(false);
   const [locked, setLocked] = useLockedBody();
+  const [fixedHeader, setFixedHeader] = useState(false)
 
   const handleDrawerToggle = () => {
     setDrawerOpened(!drawerOpened);
@@ -29,8 +30,25 @@ const Header = () => {
     setLocked(false);
   };
 
+  useEffect(() => {
+    let lastScrollY = window.pageYOffset;
+
+    const updateScrollDirection = () => {
+      const scrollY = window.pageYOffset;
+      const fixed = scrollY <= lastScrollY && scrollY > 620;
+      if (fixed !== fixedHeader) {
+        setFixedHeader(!fixedHeader);
+      }
+      lastScrollY = scrollY > 0 ? scrollY : 0;
+    };
+    window.addEventListener("scroll", updateScrollDirection); // add event listener
+    return () => {
+      window.removeEventListener("scroll", updateScrollDirection); // clean up
+    }
+  }, [fixedHeader])
+
   return (
-    <HeaderStyle className={drawerOpened ? 'open' : ''}>
+    <HeaderStyle className={`${ drawerOpened ? 'open' : '' } ${fixedHeader ? 'fixed' : ''}`}>
       <Container css={{ height: '100%' }}>
         <HeaderContent>
           <Logo>

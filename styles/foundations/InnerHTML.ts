@@ -1,8 +1,8 @@
 import { styled } from 'styles';
 
 export const InnerHTML = styled('div', {
-  maxWidth: '800px',
   margin: '$10 auto',
+  lineHeight: '1.7',
 
   'h1, h2, h3, h4, h5, h6': {
     marginTop: '$8',
@@ -27,7 +27,8 @@ export const InnerHTML = styled('div', {
 
   p: {
     marginBottom: '$5',
-    fontSize: '$3',
+    fontSize: '$4',
+    fontFamily: '$Lora'
   },
 
   ul: {
@@ -35,6 +36,7 @@ export const InnerHTML = styled('div', {
     paddingLeft: '$10',
     listStyleType: 'disc',
     fontSize: '$3',
+    fontFamily: '$Lora',
     li: {
       '&:not(:last-child)': {
         marginBottom: '$2',
@@ -45,6 +47,7 @@ export const InnerHTML = styled('div', {
   a: {
     textDecoration: 'underline',
     wordBreak: 'break-all',
+    fontFamily: '$Lora',
 
     '&:hover': {
       color: '$primary',
@@ -72,6 +75,7 @@ export const InnerHTML = styled('div', {
 
   pre: {
     fontSize: '$1',
+    fontFamily: '$Inconsolata',
     lineHeight: 1.7,
     overflow: 'auto',
     whiteSpace: 'pre',

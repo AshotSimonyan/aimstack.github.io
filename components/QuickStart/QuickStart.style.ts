@@ -61,7 +61,7 @@ const HighlightWrapper = styled('div', {
   button: {
     position: 'absolute',
     right: '0',
-    top: '8px',
+    top: '16px',
     background: 'none',
     border: 'none',
     cursor: 'pointer',

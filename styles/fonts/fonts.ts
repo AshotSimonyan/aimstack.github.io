@@ -1,7 +1,15 @@
-import { Open_Sans } from '@next/font/google';
+import { Open_Sans, Lora, Inconsolata } from '@next/font/google';
 
 const OpenSans = Open_Sans({
   subsets: ['latin'],
 });
 
-export { OpenSans };
+const LoraFont = Lora({
+  subsets: ['latin'],
+});
+
+const InconsolataFont = Inconsolata({
+  subsets: ['latin'],
+});
+
+export { OpenSans, LoraFont, InconsolataFont };

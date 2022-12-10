@@ -40,10 +40,10 @@ const Card = (props) => {
           <Link href={`/blog/${props.slug}`}>{props.title}</Link>
         </Text>
         <Text
-          size={1}
+          size={2}
           className="title"
           lineClamp
-          css={{ my: '$6', $$lineClamp: 3 }}
+          css={{ my: '$6', $$lineClamp: 3, fontFamily: '$Lora' }}
         >
           {props.description}
         </Text>

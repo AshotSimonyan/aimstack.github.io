@@ -46,7 +46,7 @@ export default function PostPage({ post, posts }) {
           site_name: 'Aimstack',
         }}
       />
-      <Container>
+      <Container css={{ maxWidth: '848px' }}>
         <Flex
           gap={5}
           css={{
@@ -73,6 +73,8 @@ export default function PostPage({ post, posts }) {
         <Text as="h1" size={7} className="title" css={{ my: '$6' }}>
           {post.title}
         </Text>
+      </Container>
+      <Container>
         <ImageWrapper>
           <Image
             src={post.image}
@@ -83,9 +85,12 @@ export default function PostPage({ post, posts }) {
             objectFit="contain"
           />
         </ImageWrapper>
-
+      </Container>
+      <Container css={{ maxWidth: '848px' }}>
         <InnerHTML dangerouslySetInnerHTML={{ __html: post.body.html }} />
       </Container>
+
+
       <PostNavigation>
         <Container css={{ maxWidth: '848px' }}>
           <Flex direction={{ '@bp2': 'column' }} gap={{ '@bp2': 10 }}>
