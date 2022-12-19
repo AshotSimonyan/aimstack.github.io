@@ -11,7 +11,8 @@ const theme: Theme = {
   },
   colors: {
     blue: '#1093F2',
-    darkBlue: '#0C1031',
+    lightBlue: 'rgba(16, 147, 242, 0.1)',
+    darkBlue: '#0C1031', //#11133A
     darkBlue500: 'rgba(12,16,49,0.5)',
     bigStone: '#191D3C',
     bigStoneHover: '#313551',
@@ -20,6 +21,7 @@ const theme: Theme = {
     white: '#ffffff',
     white100: 'rgba(255,255,255,0.1)',
     white500: 'rgba(255,255,255,0.5)',
+    white700: 'rgba(255,255,255,0.7)',
     red: '#CC231A',
     lightGrey: '#F4F7F9',
     grey: '#CFD3D6',
@@ -27,6 +29,7 @@ const theme: Theme = {
     darkGreyHover: '#393940',
 
     primary: '$blue',
+    primaryLight: '$lightBlue',
     secondary: '$green',
     textColor: '$black',
     bgColor: '$darkBlue',
@@ -57,6 +60,8 @@ const theme: Theme = {
     8: '32px',
     9: '36px',
     10: '40px',
+    11: '44px',
+    12: '48px',
   },
   fontWeights: {
     1: '400',
@@ -68,7 +73,8 @@ const theme: Theme = {
   shadows: {
     1: '0px 60px 66px -65px rgba(11, 47, 97, 0.2)',
     2: '0px 96px 66px -65px rgba(11, 47, 97, 0.2)',
-    3: 'rgb(231 235 243) 1px 1px 10px 3px'
+    3: '1px 1px 10px 3px rgb(231 235 243)',
+    4: '0px 10px 24px -10px rgba(11, 47, 97, 0.4)',
   },
   radii: {
     1: '6px',

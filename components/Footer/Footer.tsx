@@ -9,7 +9,7 @@ import {
 import { Container, Text } from 'styles/foundations';
 import Link from 'next/link';
 import { Icon } from 'components/UIkit';
-import { navList, socialList } from '../Layout/config';
+import { navList, socialList, INavList, ISocialList } from '../Layout/config';
 
 const Footer = () => {
   return (
@@ -35,7 +35,7 @@ const Footer = () => {
             </Link>
           </Logo>
           <FooterList>
-            {navList.map(({ to, title, external }) => {
+            {navList.map(({ to, title, external }: INavList) => {
               return (
                 <li key={to} onClick={() => {}}>
                   <Link
@@ -50,7 +50,7 @@ const Footer = () => {
             })}
           </FooterList>
           <FooterSocial>
-            {socialList.map(({ icon, url }) => {
+            {socialList.map(({ icon, url }: ISocialList) => {
               return (
                 <li key={icon}>
                   <a

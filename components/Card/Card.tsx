@@ -20,7 +20,7 @@ const Card = (props) => {
             src={props.image}
             alt={props.title}
             layout="fill"
-            objectFit="contain"
+            objectFit="cover"
             objectPosition="top"
           />
         </Link>

@@ -10,15 +10,15 @@ const HeaderStyle = styled('header', {
 
   '&.fixed': {
     backgroundColor: '$white',
-    position: "sticky",
-    top: "0px",
-    left: "0px",
-    right: "0px",
+    position: 'sticky',
+    top: '0px',
+    left: '0px',
+    right: '0px',
     transform: 'translateY(-100%)',
     zIndex: 99,
     animation: `${fixedHeader} 0.2s ease 0.3s forwards`,
     boxShadow: '$3',
-  }
+  },
 });
 const HeaderContent = styled('div', {
   display: 'flex',
@@ -29,21 +29,25 @@ const HeaderContent = styled('div', {
 const HeaderNav = styled('nav', {
   display: 'flex',
   justifyContent: 'center',
-  flex: 3,
+  flex: 4,
 
   '.nav-list': {
     display: 'flex',
 
     li: {
       '&:not(:last-child)': {
-        marginRight: '32px',
+        marginRight: '$6',
+
+        '@bp0': {
+          marginRight: '$4',
+        },
       },
 
       a: {
         '&:hover': {
           opacity: '.8',
-        }
-      }
+        },
+      },
     },
   },
 
@@ -76,11 +80,14 @@ const HeaderNav = styled('nav', {
 
       alignItems: 'flex-start',
       '> li': {
-        marginRight: '0',
         fontSize: '$2',
         fontWeight: '$3',
         width: '100%',
         marginBottom: '24px',
+
+        '&:not(:last-child)': {
+          marginRight: '0',
+        },
       },
     },
   },

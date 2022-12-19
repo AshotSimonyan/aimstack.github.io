@@ -91,6 +91,12 @@ export const Flex = styled('div', {
       10: {
         gap: '$10',
       },
+      11: {
+        gap: '$11',
+      },
+      12: {
+        gap: '$12',
+      },
     },
   },
   defaultVariants: {

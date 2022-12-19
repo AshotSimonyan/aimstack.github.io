@@ -38,6 +38,13 @@ const ButtonStyle = styled('button', {
           // backgroundColor: "$primaryDark"
         },
       },
+      secondary: {
+        backgroundColor: '$primaryLight',
+        color: '$primary',
+        '&:hover': {
+          // backgroundColor: "$primaryDark"
+        },
+      },
       outline: {
         backgroundColor: '$white',
         color: '$textColor',

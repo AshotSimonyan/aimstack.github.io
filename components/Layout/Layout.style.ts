@@ -21,6 +21,13 @@ const LayoutStyle = styled('main', {
 const Wrapper = styled('div', {
   position: 'relative',
   zIndex: '3',
+  display: 'flex',
+  flexDirection: 'column',
+  minHeight: '100vh',
 });
 
-export { LayoutStyle, Wrapper };
+const Content = styled('div', {
+  flex: '1',
+});
+
+export { LayoutStyle, Wrapper, Content };

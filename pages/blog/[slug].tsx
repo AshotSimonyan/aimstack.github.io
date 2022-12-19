@@ -46,19 +46,26 @@ export default function PostPage({ post, posts }) {
           site_name: 'Aimstack',
         }}
       />
+      <Container>
+        <Link href="/blog">
+          <Flex align="center" css={{ marginTop: '$10' }}>
+            <Icon name="back" size={20} />
+            <Text size={3} css={{ fontWeight: '$3' }}>
+              Go Back
+            </Text>
+          </Flex>
+        </Link>
+      </Container>
       <Container css={{ maxWidth: '848px' }}>
         <Flex
           gap={5}
+          justify={'between'}
           css={{
             color: '$darkGrey',
-            marginTop: '$10',
+            marginTop: '$6',
             '.icon': { fill: '$darkGrey' },
           }}
         >
-          <Flex gap={2} align="center">
-            <Icon name="clock" size={14} />
-            <Text size={1}>{formattedDate(post.date)}</Text>
-          </Flex>
           <Flex gap={2} align="center">
             <Icon name="folder" size={14} />
             <Text size={1}>
@@ -67,6 +74,10 @@ export default function PostPage({ post, posts }) {
                 {/*TODO change array to string*/}
               </Link>
             </Text>
+          </Flex>
+          <Flex gap={2} align="center">
+            <Icon name="clock" size={14} />
+            <Text size={1}>{formattedDate(post.date)}</Text>
           </Flex>
         </Flex>
 
@@ -89,7 +100,6 @@ export default function PostPage({ post, posts }) {
       <Container css={{ maxWidth: '848px' }}>
         <InnerHTML dangerouslySetInnerHTML={{ __html: post.body.html }} />
       </Container>
-
 
       <PostNavigation>
         <Container css={{ maxWidth: '848px' }}>

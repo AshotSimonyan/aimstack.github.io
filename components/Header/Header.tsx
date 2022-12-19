@@ -12,14 +12,14 @@ import {
 } from './Header.style';
 import { Container } from 'styles/foundations';
 import Image from 'next/image';
-import { navList, socialList } from '../Layout/config';
+import { navList, socialList, INavList, ISocialList } from '../Layout/config';
 import { useLockedBody } from 'hooks/useLockedBody';
 import { Icon } from 'components/UIkit';
 
 const Header = () => {
   const [drawerOpened, setDrawerOpened] = useState<boolean>(false);
   const [locked, setLocked] = useLockedBody();
-  const [fixedHeader, setFixedHeader] = useState(false)
+  const [fixedHeader, setFixedHeader] = useState(false);
 
   const handleDrawerToggle = () => {
     setDrawerOpened(!drawerOpened);
@@ -41,14 +41,16 @@ const Header = () => {
       }
       lastScrollY = scrollY > 0 ? scrollY : 0;
     };
-    window.addEventListener("scroll", updateScrollDirection); // add event listener
+    window.addEventListener('scroll', updateScrollDirection); // add event listener
     return () => {
-      window.removeEventListener("scroll", updateScrollDirection); // clean up
-    }
-  }, [fixedHeader])
+      window.removeEventListener('scroll', updateScrollDirection); // clean up
+    };
+  }, [fixedHeader]);
 
   return (
-    <HeaderStyle className={`${ drawerOpened ? 'open' : '' } ${fixedHeader ? 'fixed' : ''}`}>
+    <HeaderStyle
+      className={`${drawerOpened ? 'open' : ''} ${fixedHeader ? 'fixed' : ''}`}
+    >
       <Container css={{ height: '100%' }}>
         <HeaderContent>
           <Logo>
@@ -64,7 +66,7 @@ const Header = () => {
           <HeaderNav>
             <div className="nav-inner">
               <ul className="nav-list">
-                {navList.map(({ to, title, external }) => {
+                {navList.map(({ to, title, external }: INavList) => {
                   return (
                     <li key={to}>
                       <Link
@@ -93,10 +95,15 @@ const Header = () => {
               </HeaderButton>
             </div>
             <MobileSocial>
-              {socialList.map(({ icon, url }) => {
+              {socialList.map(({ icon, url }: ISocialList) => {
                 return (
                   <li key={icon} onClick={() => {}}>
-                    <a href={url} rel="noopener noreferrer" target="_blank" aria-label={icon}>
+                    <a
+                      href={url}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      aria-label={icon}
+                    >
                       <Icon name={icon} />
                     </a>
                   </li>

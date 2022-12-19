@@ -1,5 +1,5 @@
 import React, { FC, ReactNode } from 'react';
-import { LayoutStyle, Wrapper } from './Layout.style';
+import { LayoutStyle, Wrapper, Content } from './Layout.style';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import { useRouter } from 'next/router';
@@ -12,14 +12,15 @@ const Layout: FC<ILayout> = ({ children }) => {
   const router = useRouter();
   const admin = router?.pathname === '/admin';
   const home = router?.pathname === '/';
+  const blog = router?.pathname.includes('/blog');
 
   return (
     <LayoutStyle>
-      {home && (
+      {!blog && (
         <Image
           className="bg-top"
           layout="fill"
-          objectFit="contain"
+          objectFit={`${home ? 'contain' : 'fill'}`}
           objectPosition="top"
           src={'/images/static/main/main-bg.png'}
           priority
@@ -29,7 +30,7 @@ const Layout: FC<ILayout> = ({ children }) => {
 
       <Wrapper>
         {!admin && <Header />}
-        {children}
+        <Content>{children}</Content>
 
         {!admin && <Footer />}
       </Wrapper>
@@ -37,7 +38,6 @@ const Layout: FC<ILayout> = ({ children }) => {
       {home && (
         <Image
           className="bg-bottom"
-          // layout="fill"
           width={2000}
           height={3000}
           objectFit="contain"

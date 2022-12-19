@@ -1,15 +1,20 @@
-interface ISocialList {
+export interface ISocialList {
   icon: 'slack' | 'twitter' | 'linkedIn' | 'fb';
   url: string;
 }
 
-interface INavList {
+export interface INavList {
   title: string;
   to: string;
   external: boolean;
 }
 
 export const navList: INavList[] = [
+  {
+    title: 'About Us',
+    to: '/about-us',
+    external: false,
+  },
   {
     title: 'GitHub',
     to: 'https://github.com/aimhubio/aim',
@@ -43,6 +48,11 @@ export const navList: INavList[] = [
   {
     title: 'Blog',
     to: '/blog',
+    external: false,
+  },
+  {
+    title: 'Pricing',
+    to: '/pricing',
     external: false,
   },
 ];

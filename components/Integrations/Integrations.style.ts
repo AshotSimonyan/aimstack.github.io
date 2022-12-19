@@ -14,8 +14,8 @@ const SliderItem = styled('a', {
   // width: '250px',
 
   img: {
-    width: '65px !important'
-  }
+    width: '65px !important',
+  },
 });
 
 export { IntegrationsStyle, Slider, SliderItem };

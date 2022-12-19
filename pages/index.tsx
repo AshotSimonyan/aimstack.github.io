@@ -9,7 +9,7 @@ import Subscribe from 'components/Subscribe/Subscribe';
 
 const Index = () => {
   return (
-    <div>
+    <>
       <Hero />
       <Integrations />
       <VideoGuide />
@@ -17,7 +17,7 @@ const Index = () => {
       <Features />
       <Demos />
       <Subscribe />
-    </div>
+    </>
   );
 };
 

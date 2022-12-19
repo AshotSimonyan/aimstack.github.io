@@ -1,11 +1,26 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { BlogListStyle, BlogItem } from './BlogList.style';
 import Card from 'components/Card/Card';
 
-const BlogList = ({ blogList }) => {
+interface IBlog {
+  categories: string[]; //TODO change to string
+  date: Date;
+  description: string;
+  draft: boolean;
+  image: string;
+  slug: string;
+  title: string;
+  tags: string[]; //TODO remove tag
+}
+
+interface IBlogList {
+  blogList: IBlog[];
+}
+const BlogList = ({ blogList }: IBlogList) => {
+  console.log(blogList);
   return (
     <BlogListStyle>
-      {blogList.map((blog) => {
+      {blogList.map((blog: IBlog) => {
         return (
           <BlogItem key={blog.slug}>
             <Card key={blog.slug} {...blog} />

@@ -54,7 +54,7 @@ export default function Blog() {
   }
 
   return (
-    <div>
+    <>
       <NextSeo
         title="MLOps Blog | AimStack"
         description="Aimstack's recent news on everything ML best practices and MLOps tools. Find the latest releases, tutorials, guides and industry news."
@@ -92,6 +92,6 @@ export default function Blog() {
           totalPostCount={totalPostCount}
         />
       </Container>
-    </div>
+    </>
   );
 }
