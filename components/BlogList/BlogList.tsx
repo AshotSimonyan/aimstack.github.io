@@ -17,7 +17,6 @@ interface IBlogList {
   blogList: IBlog[];
 }
 const BlogList = ({ blogList }: IBlogList) => {
-  console.log(blogList);
   return (
     <BlogListStyle>
       {blogList.map((blog: IBlog) => {
