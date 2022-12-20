@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, Container, Flex } from 'styles/foundations';
-import { Icon } from 'components/UIkit';
+import { Icon, Button } from 'components/UIkit';
 import Team from 'components/Team/Team';
 import teamList from 'content/teamList';
 import {
@@ -16,7 +16,7 @@ import {
 import { cultureList, ICultureList } from 'content/cultrureList';
 import Image from 'next/image';
 
-const MyComponent = () => {
+const About = () => {
   return (
     <>
       <AboutHero>
@@ -71,6 +71,13 @@ const MyComponent = () => {
                   }
                 )}
               </CultureList>
+              <Button
+                as="a"
+                href="#"
+                target="_blank"
+              >
+                More about Aim culture
+              </Button>
             </CultureLeft>
             <CultureRight>
               <Image
@@ -105,4 +112,4 @@ const MyComponent = () => {
   );
 };
 
-export default MyComponent;
+export default About;
