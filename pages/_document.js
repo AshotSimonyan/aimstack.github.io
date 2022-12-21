@@ -13,21 +13,26 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"
+            rel='stylesheet'
+            href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css'
           />
+          <link rel='preconnect' href='https://fonts.googleapis.com' />
+          <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin />
+          <link
+            href='https://fonts.googleapis.com/css2?family=Inconsolata&family=Lora&family=Open+Sans:wght@400;500;600;700;800&display=fallback'
+            rel='stylesheet' />
           <script
             async
-            src="https://identity.netlify.com/v1/netlify-identity-widget.js"
+            src='https://identity.netlify.com/v1/netlify-identity-widget.js'
           />
           <style
-            id="stitches"
+            id='stitches'
             dangerouslySetInnerHTML={{ __html: getCssText() }}
           />
         </Head>
         <body>
-          <Main />
-          <NextScript />
+        <Main />
+        <NextScript />
         </body>
       </Html>
     );

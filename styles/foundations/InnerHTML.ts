@@ -74,7 +74,7 @@ export const InnerHTML = styled('div', {
   },
 
   pre: {
-    fontSize: '$1',
+    fontSize: '$2',
     fontFamily: '$Inconsolata',
     lineHeight: 1.7,
     overflow: 'auto',
