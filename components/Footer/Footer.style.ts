@@ -29,6 +29,10 @@ const FooterList = styled('ul', {
   li: {
     cursor: 'pointer',
     marginRight: '$9',
+
+    '@bp0': {
+      marginRight: '$4',
+    },
   },
 
   '@bp1': {

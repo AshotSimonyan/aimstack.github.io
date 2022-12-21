@@ -25,13 +25,13 @@ export default function PostPage({ post, posts }) {
         title={post.title}
         description={post.description}
         openGraph={{
-          url: 'https:officialrajdeepsingh.dev',
+          url: 'https://aimstack.io/',
           title: post.title,
           description: post.description,
           type: 'article',
           article: {
             publishedTime: post.date,
-            authors: ['https://officialrajdeepsingh.dev/pages/about'],
+            authors: ['https://aimstack.io/about-us'],
             tags: post.tags,
           },
           images: [

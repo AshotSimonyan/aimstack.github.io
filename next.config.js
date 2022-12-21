@@ -2,6 +2,7 @@ const { withContentlayer } = require('next-contentlayer');
 
 const nextconfig = {
   reactStrictMode: true,
+  optimizeFonts: false,
   images: {
     // loader: "akamai",
     // path: "",

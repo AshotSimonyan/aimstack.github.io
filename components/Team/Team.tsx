@@ -42,7 +42,7 @@ const Team = ({ team }: ITeam) => {
                   >
                     <TeamImage
                       css={{
-                        maskImage: `url(/images/static/about-us/shapes/${1}.svg)`,
+                        maskImage: `url(${shape})`,
                       }}
                     >
                       <Image
@@ -50,6 +50,7 @@ const Team = ({ team }: ITeam) => {
                         alt={fullName}
                         height={200}
                         width={200}
+                        quality={100}
                       />
                     </TeamImage>
 

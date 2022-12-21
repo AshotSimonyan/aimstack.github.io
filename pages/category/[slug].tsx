@@ -18,7 +18,7 @@ export default function Category({ posts }) {
         title="Access your category realted articles"
         description="Access your category realted articles"
         openGraph={{
-          url: 'https://officialrajdeepsingh.dev',
+          url: 'https://aimstack.io/',
           title: 'Access your category realted articles',
           description: 'Access your category realted articles',
 

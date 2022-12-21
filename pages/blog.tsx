@@ -59,7 +59,7 @@ export default function Blog() {
         title="MLOps Blog | AimStack"
         description="Aimstack's recent news on everything ML best practices and MLOps tools. Find the latest releases, tutorials, guides and industry news."
         openGraph={{
-          url: 'http://officialrajdeepsingh.dev',
+          url: 'https://aimstack.io/',
           title: 'Welcome to my blog home page',
           description:
             'Build nextjs blog website with Markdown, sitemap, serachbar, category, tag and SEO support',

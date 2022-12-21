@@ -56,6 +56,7 @@ const Features = () => {
                   alt="AimStack"
                   width={605}
                   height={360}
+                  quality={100}
                 />
               </Right>
             </StepRow>

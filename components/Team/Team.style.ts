@@ -46,7 +46,7 @@ const TeamItem = styled('li', {
 });
 
 const TeamImage = styled('div', {
-  maskSize: '85%',
+  maskSize: '100%',
   WebkitMaskRepeat: 'no-repeat',
 
   img: {

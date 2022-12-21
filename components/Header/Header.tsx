@@ -89,9 +89,8 @@ const Header = () => {
                   data-size="large"
                   data-show-count="true"
                   aria-label="Star aimhubio/aim on GitHub"
-                >
-                  Star
-                </GitHubButton>
+                  data-text='Star'
+                />
               </HeaderButton>
             </div>
             <MobileSocial>
@@ -120,9 +119,8 @@ const Header = () => {
               data-size="large"
               data-show-count="true"
               aria-label="Star aimhubio/aim on GitHub"
-            >
-              Star
-            </GitHubButton>
+              data-text='Star'
+            />
           </HeaderButton>
           <ButtonMenu
             className="hamburger"
