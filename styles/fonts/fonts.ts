@@ -1,4 +1,4 @@
-import { Open_Sans, Lora, Inconsolata } from '@next/font/google';
+import { Open_Sans, Lora, Inconsolata } from '@next/font/(.*)';
 
 const OpenSans = Open_Sans({
   subsets: ['latin'],

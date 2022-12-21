@@ -15,10 +15,13 @@ import {
 } from 'styles/pages/About.style';
 import { cultureList, ICultureList } from 'content/cultrureList';
 import Image from 'next/image';
+import aboutSeo from 'content/SeoData/about';
+import Seo from 'components/SEO/SEO';
 
 const About = () => {
   return (
     <>
+      <Seo {...aboutSeo} />
       <AboutHero>
         <Container>
           <Text as="h1" size={10} css={{ marginBottom: '$6' }}>

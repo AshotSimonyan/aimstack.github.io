@@ -2,12 +2,14 @@ import React from 'react';
 import { Text, Container } from 'styles/foundations';
 import { NextSeo } from 'next-seo';
 import BlogList from 'components/BlogList/BlogList';
+import Seo from 'components/SEO/SEO';
 import { sortByDate, ImageUrl, pageCount } from '../utils';
 import { allPosts } from 'contentlayer/generated';
 import { pick } from '@contentlayer/client';
 import Pagination from '../components/Pagination/Pagnation';
 import { show_per_page } from '../config';
 import { useRouter } from 'next/router';
+import blogSeo from '../content/SeoData/blog';
 
 export default function Blog() {
   const router = useRouter();
@@ -55,26 +57,7 @@ export default function Blog() {
 
   return (
     <>
-      <NextSeo
-        title="MLOps Blog | AimStack"
-        description="Aimstack's recent news on everything ML best practices and MLOps tools. Find the latest releases, tutorials, guides and industry news."
-        openGraph={{
-          url: 'https://aimstack.io/',
-          title: 'Welcome to my blog home page',
-          description:
-            'Build nextjs blog website with Markdown, sitemap, serachbar, category, tag and SEO support',
-          images: [
-            {
-              url: `${ImageUrl('banner.png')}`,
-              width: 1224,
-              height: 724,
-              alt: 'banner',
-              type: 'image/jpeg',
-            },
-          ],
-          site_name: 'Aimstack',
-        }}
-      />
+      <Seo {...blogSeo} />
       <Container>
         <Text
           as="h1"

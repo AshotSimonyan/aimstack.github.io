@@ -6,10 +6,13 @@ import Features from 'components/Features/Features';
 import Demos from 'components/Demos/Demos';
 import QuickStart from 'components/QuickStart/QuickStart';
 import Subscribe from 'components/Subscribe/Subscribe';
+import homeSeo from 'content/SeoData/homepage';
+import Seo from '../components/SEO/SEO';
 
 const Index = () => {
   return (
     <>
+      <Seo {...homeSeo} />
       <Hero />
       <Integrations />
       <VideoGuide />

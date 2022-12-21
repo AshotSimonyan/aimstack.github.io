@@ -2,10 +2,13 @@ import React from 'react';
 import PricingCard from 'components/PricingCard/PricingCard';
 import { Text, Flex, Container } from 'styles/foundations';
 import pricingList from 'content/pricingList';
+import Seo from 'components/SEO/SEO';
+import pricingSeo from 'content/SeoData/pricing';
 
 const Pricing = () => {
   return (
     <>
+      <Seo {...pricingSeo}/>
       <Container>
         <Flex align="center" direction="column" css={{ py: '80px' }}>
           <Text as="h1" size={10} css={{ marginBottom: '$6' }}>

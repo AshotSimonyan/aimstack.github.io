@@ -14,37 +14,22 @@ import { formattedDate } from 'utils';
 import { Icon } from 'components/UIkit';
 import { allPosts } from 'contentlayer/generated';
 import Image from 'next/image';
+import Seo from '../../components/SEO/SEO';
 
 export default function PostPage({ post, posts }) {
   const index = posts.findIndex((object) => {
     return object.slug === post.slug;
   });
+
+  console.log(post);
   return (
     <BlogSingleStyle>
-      <NextSeo
+      <Seo
         title={post.title}
         description={post.description}
-        openGraph={{
-          url: 'https://aimstack.io/',
-          title: post.title,
-          description: post.description,
-          type: 'article',
-          article: {
-            publishedTime: post.date,
-            authors: ['https://aimstack.io/about-us'],
-            tags: post.tags,
-          },
-          images: [
-            {
-              url: post.image,
-              width: 1224,
-              height: 724,
-              alt: post.title,
-              type: 'image/jpeg',
-            },
-          ],
-          site_name: 'Aimstack',
-        }}
+        date={post.date}
+        image={post.image}
+        path={`blog/${post.slug}`}
       />
       <Container>
         <Link href="/blog">

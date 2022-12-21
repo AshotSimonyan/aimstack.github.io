@@ -1,52 +1,11 @@
-// export default {
-//     cms_manual_init: true,
-//     backend: {
-//         name: 'github',
-//         repo: 'AshotSimonyan/netlifycms-test',
-//         branch: 'main',
-//     },
-//     media_folder: 'public/images',
-//     public_folder: '/images',
-//     collections: [
-//         {
-//             name: 'blog',
-//             label: 'blog',
-//             create: true,
-//             slug: "{{title}}",
-//             fields: [
-//                 {label: "Author", name: "author", widget: "string"},
-//                 {label: "Categories", name: "categories", widget: "list"},
-//                 {label: "Publish Date", name: "date", widget: "datetime"}
-//             ],
-//             files: [
-//                 {
-//                     label: 'Blog',
-//                     name: 'Blog',
-//                     file: 'posts/article-post-16.md',
-//                     fields: [
-//                         {
-//                             label: 'Hero Title',
-//                             name: 'hero_title',
-//                             widget: 'string',
-//                         },
-//                         {
-//                             label: 'Hero Description',
-//                             name: 'hero_description',
-//                             widget: 'markdown',
-//                         },
-//                     ],
-//                 },
-//             ],
-//         },
-//     ],
-// };
+import SITE_URL from 'config';
 
 export default {
   backend: {
     name: 'github',
     repo: 'AshotSimonyan/netlifycms-test',
     branch: 'test',
-    // base_url: 'https://netlifycms-ashot.vercel.app/',
+    base_url: SITE_URL,
     // auth_endpoint: 'api/auth'
   },
   load_config_file: false,
