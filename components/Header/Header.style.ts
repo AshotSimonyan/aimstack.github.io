@@ -51,7 +51,7 @@ const HeaderNav = styled('nav', {
 
   '@bp1': {
     position: 'fixed',
-    top: '0',
+    top: '72px',
     right: '0',
     bottom: '0',
     left: '0',
@@ -64,14 +64,14 @@ const HeaderNav = styled('nav', {
     justifyContent: 'space-between',
 
     '.open &': {
-      height: '100vh',
+      height: 'calc(100vh - 72px)',
     },
     '.nav-inner': {
       width: '100%',
       flexDirection: 'column',
       alignItems: 'inherit',
       justifyContent: 'space-between',
-      padding: '110px 20px 0',
+      padding: '16px 20px 0',
     },
     '.nav-list': {
       flexDirection: 'column',
