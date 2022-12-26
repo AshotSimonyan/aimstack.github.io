@@ -4,9 +4,9 @@ const nextconfig = {
   reactStrictMode: true,
   optimizeFonts: false,
   images: {
-    // loader: "akamai",
-    // path: "",
-    unoptimized: true
+    loader: "akamai",
+    path: "",
+    // unoptimized: true
     // remotePatterns: [
     //   {
     //     protocol: 'https',

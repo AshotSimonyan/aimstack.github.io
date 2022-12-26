@@ -1,13 +1,12 @@
 import SITE_URL from '../config';
 
-console.log(SITE_URL);
 export default {
   backend: {
     name: 'github',
     repo: 'AshotSimonyan/ashotsimonyan.github.io',
     branch: 'gh-pages',
     site_domain: SITE_URL,
-    base_url: SITE_URL,
+    base_url: 'https://github.com',
     // auth_endpoint: 'api/auth'
   },
   load_config_file: false,
