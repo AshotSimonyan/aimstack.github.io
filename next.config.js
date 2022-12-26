@@ -1,13 +1,12 @@
 const { withContentlayer } = require('next-contentlayer');
 const withOptimizedImages  = require('next-optimized-images')
 
-const nextConfig = {
+const nextConfig = withOptimizedImages({
   reactStrictMode: true,
   optimizeFonts: false,
   images: {
-    loader: 'imgix',
-    path: '',
-    // path: '/_next/image',
+    // loader: 'imgix',
+    // path: '',
     // unoptimized: true
     // remotePatterns: [
     //   {
@@ -18,10 +17,10 @@ const nextConfig = {
     //   },
     // ],
   },
-  // basePath: "/",
-  // assetPrefix: "/",
+  // basePath: "",
+  // assetPrefix: "",
   disableImportAliasWarning: true,
-};
+});
 
 module.exports = withContentlayer(nextConfig);
 
