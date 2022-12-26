@@ -5,9 +5,8 @@ const nextConfig = {
   reactStrictMode: true,
   optimizeFonts: false,
   images: {
-    // loader: "cloudinary",
-    // path: "/",
-    domains: ['res.cloudinary.com'],
+    loader: "akamai",
+    path: "",
     // remotePatterns: [
     //   {
     //     protocol: 'https',
@@ -17,8 +16,8 @@ const nextConfig = {
     //   },
     // ],
   },
-  // basePath: "/netlifycms-test",
-  // assetPrefix: "/netlifycms-test",
+  basePath: "/ashotsimonyan.github.io",
+  assetPrefix: "/ashotsimonyan.github.io",
   disableImportAliasWarning: true,
 };
 
