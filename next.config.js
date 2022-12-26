@@ -4,16 +4,16 @@ const nextconfig = {
   reactStrictMode: true,
   optimizeFonts: false,
   images: {
-    // loader: "akamai",
-    // path: "",
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'aim-netlify-image.s3.amazonaws.com',
-        port: '',
-        // pathname: '/account123/**',
-      },
-    ],
+    loader: "akamai",
+    path: "",
+    // remotePatterns: [
+    //   {
+    //     protocol: 'https',
+    //     hostname: 'aim-netlify-image.s3.amazonaws.com',
+    //     port: '',
+    //     // pathname: '/account123/**',
+    //   },
+    // ],
   },
   // basePath: "/netlifycms-test",
   // assetPrefix: "/netlifycms-test",
