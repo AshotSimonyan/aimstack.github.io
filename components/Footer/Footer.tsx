@@ -40,7 +40,6 @@ const Footer = () => {
                 <li key={to} onClick={() => {}}>
                   <Link
                     href={to}
-                    scroll={false}
                     target={external ? '_blank' : '_self'}
                   >
                     {title}

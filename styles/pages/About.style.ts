@@ -40,15 +40,11 @@ const CultureItem = styled('li', {
     width: '100%',
     marginLeft: '0',
     marginBottom: '$10',
-
-    '&:last-child': {
-      marginBottom: '0',
-    },
   },
 });
 
 const CultureRight = styled('div', {
-  maxWidth: '580px',
+  maxWidth: '650px',
 
   img: {
     width: '100%',

@@ -21,7 +21,6 @@ export default function PostPage({ post, posts }) {
     return object.slug === post.slug;
   });
 
-  console.log(post);
   return (
     <BlogSingleStyle>
       <Seo
@@ -66,7 +65,7 @@ export default function PostPage({ post, posts }) {
           </Flex>
         </Flex>
 
-        <Text as="h1" size={7} className="title" css={{ my: '$6' }}>
+        <Text as="h1" size={7} className="title" css={{ my: '$6', fontWeight: '$4' }}>
           {post.title}
         </Text>
       </Container>
@@ -88,7 +87,7 @@ export default function PostPage({ post, posts }) {
 
       <PostNavigation>
         <Container css={{ maxWidth: '848px' }}>
-          <Flex direction={{ '@bp2': 'column' }} gap={{ '@bp2': 10 }}>
+          <Flex>
             <Prev>
               {!!index && (
                 <Link href={`/blog/${posts[index - 1]?.slug}`}>
@@ -102,7 +101,7 @@ export default function PostPage({ post, posts }) {
                       PREVIOUS POST
                     </Text>
                   </Flex>
-                  <Text className="text" size={1} css={{ marginTop: '$3' }}>
+                  <Text className="text" size={1} lineClamp css={{ marginTop: '$3', $$lineClamp: 2 }}>
                     {posts[index - 1]?.title}
                   </Text>
                 </Link>
@@ -113,7 +112,7 @@ export default function PostPage({ post, posts }) {
                 <Link href={`/blog/${posts[index + 1]?.slug}`}>
                   <Flex
                     align="center"
-                    justify={{ '@initial': 'end', '@bp2': 'start' }}
+                    justify='end'
                   >
                     <Text
                       className="chevron-text"
@@ -124,7 +123,7 @@ export default function PostPage({ post, posts }) {
                     </Text>
                     <Icon name="chevron-right" />
                   </Flex>
-                  <Text className="text" size={1} css={{ marginTop: '$3' }}>
+                  <Text className="text" size={1} lineClamp css={{ marginTop: '$3', $$lineClamp: 2 }}>
                     {posts[index + 1]?.title}
                   </Text>
                 </Link>

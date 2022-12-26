@@ -20,7 +20,7 @@ const PricingCardList = styled('ul', {
       marginBottom: '$3',
     },
     span: {
-      color: '$textColor',
+      color: '$black700',
     },
   },
 });

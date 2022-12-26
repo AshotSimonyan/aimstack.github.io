@@ -39,7 +39,7 @@ const FooterList = styled('ul', {
     order: '3',
     width: '100%',
     marginTop: '$7',
-    justifyContent: 'center',
+
     li: {
       '&:last-child': {
         marginRight: '0',

@@ -53,7 +53,7 @@ const About = () => {
           <Text as="h3" size={8} css={{ '@bp1': { textAlign: 'center' } }}>
             Our Cultural Values
           </Text>
-          <Flex direction={{ '@bp1': 'columnReverse' }}>
+          <Flex align='center' direction={{ '@bp1': 'columnReverse' }}>
             <CultureLeft>
               <CultureList>
                 {cultureList.map(
@@ -68,7 +68,7 @@ const About = () => {
                         >
                           {title}
                         </Text>
-                        <Text>{description}</Text>
+                        <Text css={{color: '$white700'}}>{description}</Text>
                       </CultureItem>
                     );
                   }
@@ -78,6 +78,7 @@ const About = () => {
                 as="a"
                 href="#"
                 target="_blank"
+                css={{fontSize: '$2'}}
               >
                 More about Aim culture
               </Button>

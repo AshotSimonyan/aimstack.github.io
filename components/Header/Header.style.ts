@@ -23,13 +23,11 @@ const HeaderStyle = styled('header', {
 const HeaderContent = styled('div', {
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'space-between',
   height: '100%',
 });
 const HeaderNav = styled('nav', {
   display: 'flex',
   justifyContent: 'center',
-  flex: 4,
 
   '.nav-list': {
     display: 'flex',
@@ -83,7 +81,11 @@ const HeaderNav = styled('nav', {
         fontSize: '$2',
         fontWeight: '$3',
         width: '100%',
-        marginBottom: '24px',
+
+        a: {
+          display: 'block',
+          py: '$3'
+        },
 
         '&:not(:last-child)': {
           marginRight: '0',
@@ -93,8 +95,7 @@ const HeaderNav = styled('nav', {
   },
 });
 const Logo = styled('div', {
-  flex: 1,
-
+  marginRight: '50px',
   '& .logo': {
     maxWidth: '158px',
     width: '100%',
@@ -108,6 +109,8 @@ const Logo = styled('div', {
 });
 
 const HeaderButton = styled('div', {
+  marginLeft: 'auto',
+
   span: {
     span: {
       display: 'flex',

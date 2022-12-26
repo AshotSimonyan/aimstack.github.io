@@ -35,7 +35,7 @@ const PricingCard: FC<IPricingCard> = ({
               {title}
             </Text>
           </Flex>
-          <Text size={2} css={{ marginBottom: '$3' }}>
+          <Text size={2} css={{ marginBottom: '$5', color: '$black700' }}>
             {description}
           </Text>
           <PricingCardList>
@@ -55,6 +55,7 @@ const PricingCard: FC<IPricingCard> = ({
             variant={buttonVariant}
             href={buttonURL}
             target="_blank"
+            css={{fontSize: '$2'}}
           >
             {buttonText}
           </Button>

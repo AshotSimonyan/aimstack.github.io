@@ -32,12 +32,12 @@ const PostNavigation = styled('div', {
 
 const Prev = styled('div', {
   flex: 1,
-  paddingRight: '$4',
+  paddingRight: '$3',
   borderRight: '2px solid $lightGrey',
 
   '@bp2': {
-    borderRight: 'none',
-    paddingRight: '0',
+    // borderRight: 'none',
+    // paddingRight: '0',
   },
 
   a: {
@@ -54,11 +54,11 @@ const Prev = styled('div', {
 const Next = styled('div', {
   flex: 1,
   textAlign: 'right',
-  paddingLeft: '$4',
+  paddingLeft: '$3',
 
   '@bp2': {
-    textAlign: 'left',
-    paddingLeft: '0',
+    // textAlign: 'left',
+    // paddingLeft: '0',
   },
 
   a: {

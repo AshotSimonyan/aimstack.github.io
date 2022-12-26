@@ -1,9 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { HeroStyle, HeroContent } from './Hero.style';
 import { Text, Container } from 'styles/foundations';
 import { Button } from 'components/UIkit';
+import { log } from 'util';
 
 const Hero = () => {
+  const [release, setRelease] = useState()
+
+  const getRelease = () => {
+    fetch('https://api.github.com/repos/aimhubio/aim/releases/latest')
+      .then(res => res.json())
+      .then(res => {
+        const releaseData = res.tag_name.substring(1)
+        setRelease(releaseData)
+      })
+      .catch(e => console.log(e))
+  }
+
+  useEffect(() => {
+    getRelease()
+  }, [])
+
   return (
     <HeroStyle>
       <Container>
@@ -31,7 +48,7 @@ const Hero = () => {
               href="https://aimstack.io/aim-3-10-release-catboost-integration/"
               target="_blank"
             >
-              Aim release <strong>3.10</strong>
+              Aim release <strong>{release}</strong>
             </Button>
           </div>
         </HeroContent>

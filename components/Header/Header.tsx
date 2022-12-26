@@ -72,7 +72,6 @@ const Header = () => {
                       <Link
                         onClick={handleDrawerClose}
                         href={to}
-                        scroll={false}
                         target={external ? '_blank' : '_self'}
                       >
                         {title}
@@ -123,7 +122,7 @@ const Header = () => {
             />
           </HeaderButton>
           <ButtonMenu
-            className="hamburger"
+            css={{ marginLeft: 'auto', padding: '$3' }}
             type="button"
             onClick={handleDrawerToggle}
           >

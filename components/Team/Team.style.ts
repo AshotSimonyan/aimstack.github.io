@@ -8,11 +8,10 @@ const TeamStyle = styled('section', {
 const TeamList = styled('ul', {
   display: 'flex',
   flexWrap: 'wrap',
-  marginLeft: '-24px',
+  marginLeft: '-40px',
   marginTop: '100px',
 
   '@bp1': {
-    marginLeft: '-40px',
     justifyContent: 'center',
   },
 
@@ -22,13 +21,12 @@ const TeamList = styled('ul', {
 });
 
 const TeamItem = styled('li', {
-  width: 'calc((100% / 4) - 24px)',
-  marginLeft: '24px',
+  width: 'calc((100% / 4) - 40px)',
+  marginLeft: '40px',
   marginBottom: '60px',
 
   '@bp1': {
     width: 'calc((100% / 2) - 40px)',
-    marginLeft: '40px',
     marginBottom: '40px',
   },
   '@bp2': {

@@ -11,7 +11,7 @@ export const InnerHTML = styled('div', {
 
   h2: {
     fontSize: '$7',
-    fontWeight: '$2',
+    fontWeight: '$3',
     '@bp2': {
       fontSize: '$6',
     },

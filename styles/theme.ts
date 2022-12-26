@@ -17,6 +17,7 @@ const theme: Theme = {
     bigStoneHover: '#313551',
     green: '#14C89D',
     black: '#000000',
+    black700: 'rgba(0,0,0,0.7)',
     white: '#ffffff',
     white100: 'rgba(255,255,255,0.1)',
     white500: 'rgba(255,255,255,0.5)',
@@ -72,7 +73,7 @@ const theme: Theme = {
   shadows: {
     1: '0px 60px 66px -65px rgba(11, 47, 97, 0.2)',
     2: '0px 96px 66px -65px rgba(11, 47, 97, 0.2)',
-    3: '1px 1px 10px 3px rgb(231 235 243)',
+    3: '1px 1px 10px 3px  rgb(0, 0, 0, 10%)',
     4: '0px 10px 24px -10px rgba(11, 47, 97, 0.4)',
   },
   radii: {

@@ -61,7 +61,7 @@ const Team = ({ team }: ITeam) => {
                       <Text size={2} css={{ py: '$2', fontWeight: '$3' }}>
                         {jobTitle}
                       </Text>
-                      <Text size={2}>{description}</Text>
+                      <Text css={{color: '$black700'}} size={2}>{description}</Text>
                     </div>
                   </Flex>
                 </TeamItem>
