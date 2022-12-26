@@ -1,5 +1,14 @@
 import dynamic from 'next/dynamic';
 import config from 'cms/config';
+import { Flex } from 'styles/foundations';
+
+const Loading = () => {
+  return (
+    <Flex css={{height: '100vh'}} direction='column' justify='center' align='center'>
+      <p>Loading...</p>
+    </Flex>
+  )
+}
 
 const CMS = dynamic(
   () =>
@@ -7,7 +16,7 @@ const CMS = dynamic(
       // @ts-ignore
       cms.init({ config });
     }) as any,
-  { ssr: false, loading: () => <p>Loading...</p> }
+  { ssr: false, loading: () => <Loading /> }
 );
 
 const AdminPage = () => {

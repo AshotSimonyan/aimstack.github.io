@@ -10,7 +10,7 @@ interface ILayout {
 }
 const Layout: FC<ILayout> = ({ children }) => {
   const router = useRouter();
-  const admin = router?.pathname === '/admin';
+  const admin = router?.pathname.includes('/admin');
   const home = router?.pathname === '/';
   const blog = router?.pathname.includes('/blog');
 
@@ -28,12 +28,17 @@ const Layout: FC<ILayout> = ({ children }) => {
         />
       )}
 
-      <Wrapper>
-        {!admin && <Header />}
-        <Content>{children}</Content>
+      {
+        admin ?
+          <Content>{children}</Content> :
 
-        {!admin && <Footer />}
-      </Wrapper>
+          <Wrapper>
+            <Header />
+            <Content>{children}</Content>
+            <Footer />
+          </Wrapper>
+      }
+
 
       {home && (
         <Image
