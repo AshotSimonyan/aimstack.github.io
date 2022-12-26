@@ -4,9 +4,8 @@ const nextconfig = {
   reactStrictMode: true,
   optimizeFonts: false,
   images: {
-    // loader: "imgix",
-    // path: "",
-    // unoptimized: true
+    loader: "cloudinary",
+    path: "/",
     remotePatterns: [
       {
         protocol: 'https',
