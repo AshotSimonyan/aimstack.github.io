@@ -4,7 +4,7 @@ export default {
   backend: {
     name: 'github',
     repo: 'AshotSimonyan/ashotsimonyan.github.io',
-    branch: 'gh-pages',
+    branch: 'main',
     site_domain: SITE_URL,
     base_url: 'https://github.com',
     // auth_endpoint: 'api/auth'
