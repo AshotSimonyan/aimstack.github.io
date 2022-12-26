@@ -8,14 +8,14 @@ const nextConfig = {
     // loader: "cloudinary",
     // path: "/",
     domains: ['res.cloudinary.com'],
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'aim-netlify-image.s3.amazonaws.com',
-        port: '',
-        // pathname: '/account123/**',
-      },
-    ],
+    // remotePatterns: [
+    //   {
+    //     protocol: 'https',
+    //     hostname: 'aim-netlify-image.s3.amazonaws.com',
+    //     port: '',
+    //     // pathname: '/account123/**',
+    //   },
+    // ],
   },
   // basePath: "/netlifycms-test",
   // assetPrefix: "/netlifycms-test",
