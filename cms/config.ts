@@ -4,7 +4,7 @@ console.log(SITE_URL);
 export default {
   backend: {
     name: 'github',
-    repo: 'AshotSimonyan/netlifycms-test',
+    repo: 'AshotSimonyan/ashotsimonyan.github.io',
     branch: 'gh-pages',
     site_domain: SITE_URL,
     base_url: SITE_URL,
