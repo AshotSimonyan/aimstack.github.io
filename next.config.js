@@ -1,34 +1,27 @@
 const { withContentlayer } = require('next-contentlayer');
-const withPlugins = require('next-compose-plugins');
-const optimizedImages   = require('next-optimized-images')
+const withExportImages = require('next-export-optimize-images')
 
-const nextConfig = withPlugins([
-  [optimizedImages, {
+const nextConfig = {
+  reactStrictMode: true,
+  optimizeFonts: false,
+  // images: {
+  //   // loader: "akami",
+  //   // path: "",
+  //   // remotePatterns: [
+  //   //   {
+  //   //     protocol: 'https',
+  //   //     hostname: 'aim-netlify-image.s3.amazonaws.com',
+  //   //     port: '',
+  //   //     // pathname: '/account123/**',
+  //   //   },
+  //   // ],
+  // },
+  // basePath: "",
+  // assetPrefix: "",
+  disableImportAliasWarning: true,
+};
 
-  }],
-  {
-    reactStrictMode: true,
-    optimizeFonts: false,
-    images: {
-      // loader: 'imgix',
-      // path: '',
-      // unoptimized: true
-      // remotePatterns: [
-      //   {
-      //     protocol: 'https',
-      //     hostname: 'aim-netlify-image.s3.amazonaws.com',
-      //     port: '',
-      //     // pathname: '/account123/**',
-      //   },
-      // ],
-    },
-    // basePath: "",
-    // assetPrefix: "",
-    disableImportAliasWarning: true,
-  }
-]);
-
-module.exports = withContentlayer(nextConfig);
+module.exports = withExportImages(withContentlayer(nextConfig));
 
 // const {withContentlayer} = require('next-contentlayer')
 //
