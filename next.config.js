@@ -5,9 +5,10 @@ const nextConfig = {
   reactStrictMode: true,
   optimizeFonts: false,
   images: {
-    // loader: "akamai",
-    // path: "https://ashotsimonyan.github.io/",
-    unoptimized: true
+    loader: 'imgix',
+    path: '',
+    // path: '/_next/image',
+    // unoptimized: true
     // remotePatterns: [
     //   {
     //     protocol: 'https',
@@ -17,8 +18,8 @@ const nextConfig = {
     //   },
     // ],
   },
-  basePath: "",
-  assetPrefix: "",
+  // basePath: "/",
+  // assetPrefix: "/",
   disableImportAliasWarning: true,
 };
 
