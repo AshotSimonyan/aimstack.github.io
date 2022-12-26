@@ -1,3 +1,5 @@
+import SITE_URL from './config';
+
 const { withContentlayer } = require('next-contentlayer');
 
 const nextconfig = {
@@ -6,6 +8,7 @@ const nextconfig = {
   images: {
     loader: "cloudinary",
     path: "/",
+    domains: [SITE_URL],
     remotePatterns: [
       {
         protocol: 'https',
