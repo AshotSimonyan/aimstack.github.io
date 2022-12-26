@@ -40,7 +40,6 @@ const Header = () => {
       if (fixed !== fixedHeader && mouseWheel) {
         setFixedHeader(!fixedHeader);
       }
-      console.log(scrollY - lastScrollY);
       lastScrollY = scrollY > 10 ? scrollY : 0;
     };
     window.addEventListener('scroll', updateScrollDirection); // add event listener
