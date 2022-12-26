@@ -7,7 +7,7 @@ const nextConfig = {
   images: {
     // loader: "akamai",
     // path: "https://ashotsimonyan.github.io/",
-    unoptimised: true
+    unoptimized: true
     // remotePatterns: [
     //   {
     //     protocol: 'https',
