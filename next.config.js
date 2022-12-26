@@ -1,12 +1,13 @@
 const { withContentlayer } = require('next-contentlayer');
+const withOptimizedImages  = require('next-optimized-images')
 
 const nextconfig = {
   reactStrictMode: true,
   optimizeFonts: false,
   images: {
-    loader: "cloudinary",
-    path: "/",
-    domains: ['https://ashotsimonyan.github.io/'],
+    // loader: "cloudinary",
+    // path: "/",
+    // domains: ['https://ashotsimonyan.github.io/'],
     remotePatterns: [
       {
         protocol: 'https',
@@ -21,7 +22,7 @@ const nextconfig = {
   disableImportAliasWarning: true,
 };
 
-module.exports = withContentlayer(nextconfig);
+module.exports = withContentlayer(withOptimizedImages(nextconfig));
 
 // const {withContentlayer} = require('next-contentlayer')
 //
