@@ -4,7 +4,7 @@ export default {
   backend: {
     name: 'github',
     repo: 'AshotSimonyan/netlifycms-test',
-    branch: 'test',
+    branch: 'gh-pages',
     site_domain: SITE_URL,
     // auth_endpoint: 'api/auth'
   },
