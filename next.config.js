@@ -16,8 +16,8 @@ const nextConfig = {
     //   },
     // ],
   },
-  basePath: "/ashotsimonyan.github.io",
-  assetPrefix: "/ashotsimonyan.github.io",
+  basePath: "/",
+  assetPrefix: "/",
   disableImportAliasWarning: true,
 };
 
