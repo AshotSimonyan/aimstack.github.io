@@ -22,10 +22,9 @@ export default {
         { label: 'Author', name: 'author', widget: 'string' },
         { label: 'Categories', name: 'categories', widget: 'list' },
         { label: 'Publish Date', name: 'date', widget: 'datetime' },
-        { label: 'Description', name: 'description', widget: 'string' },
-        { label: 'Featured Image', name: 'image', widget: 'image' },
-        { label: 'Tags', name: 'tags', widget: 'list' },
         { label: 'Title', name: 'title', widget: 'string' },
+        { label: 'Featured Image', name: 'image', widget: 'image' },
+        { label: 'Description', name: 'description', widget: 'string' },
         { label: 'Body', name: 'body', widget: 'markdown' },
         {
           label: 'Draft post',
