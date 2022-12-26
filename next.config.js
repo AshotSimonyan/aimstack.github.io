@@ -1,7 +1,7 @@
 const { withContentlayer } = require('next-contentlayer');
 const withExportImages = require('next-export-optimize-images')
 
-const nextConfig = {
+const nextConfig = withExportImages({
   reactStrictMode: true,
   optimizeFonts: false,
   // images: {
@@ -19,9 +19,9 @@ const nextConfig = {
   // basePath: "",
   // assetPrefix: "",
   disableImportAliasWarning: true,
-};
+});
 
-module.exports = withExportImages(withContentlayer(nextConfig));
+module.exports = withContentlayer(nextConfig);
 
 // const {withContentlayer} = require('next-contentlayer')
 //
