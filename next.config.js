@@ -16,8 +16,8 @@ const nextConfig = {
     //   },
     // ],
   },
-  basePath: "/",
-  assetPrefix: "/",
+  basePath: "",
+  assetPrefix: "",
   disableImportAliasWarning: true,
 };
 
