@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { HeroStyle, HeroContent } from './Hero.style';
 import { Text, Container } from 'styles/foundations';
 import { Button } from 'components/UIkit';
-import { log } from 'util';
+import { GITHUB_API } from 'config';
 
 const Hero = () => {
   const [release, setRelease] = useState()
 
   const getRelease = () => {
-    fetch('https://api.github.com/repos/aimhubio/aim/releases/latest')
+    fetch(`${GITHUB_API}releases/latest`)
       .then(res => res.json())
       .then(res => {
         const releaseData = res.tag_name.substring(1)

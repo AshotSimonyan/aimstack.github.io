@@ -5,7 +5,7 @@ export default {
     name: 'github',
     repo: 'AshotSimonyan/netlifycms-test',
     branch: 'test',
-    base_url: SITE_URL,
+    site_domain: SITE_URL,
     // auth_endpoint: 'api/auth'
   },
   load_config_file: false,
