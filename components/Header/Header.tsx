@@ -36,10 +36,12 @@ const Header = () => {
     const updateScrollDirection = () => {
       const scrollY = window.pageYOffset;
       const fixed = scrollY <= lastScrollY && scrollY > 620;
-      if (fixed !== fixedHeader) {
+      const mouseWheel = (scrollY - lastScrollY) < -10 || (scrollY - lastScrollY) > 10
+      if (fixed !== fixedHeader && mouseWheel) {
         setFixedHeader(!fixedHeader);
       }
-      lastScrollY = scrollY > 0 ? scrollY : 0;
+      console.log(scrollY - lastScrollY);
+      lastScrollY = scrollY > 10 ? scrollY : 0;
     };
     window.addEventListener('scroll', updateScrollDirection); // add event listener
     return () => {

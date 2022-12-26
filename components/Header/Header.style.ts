@@ -16,7 +16,7 @@ const HeaderStyle = styled('header', {
     right: '0px',
     transform: 'translateY(-100%)',
     zIndex: 99,
-    animation: `${fixedHeader} 0.2s ease 0.3s forwards`,
+    animation: `${fixedHeader} 0.2s ease forwards`,
     boxShadow: '$3',
   },
 });
