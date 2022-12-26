@@ -5,8 +5,8 @@ const nextConfig = {
   reactStrictMode: true,
   optimizeFonts: false,
   images: {
-    loader: "akamai",
-    path: "https://ashotsimonyan.github.io/",
+    // loader: "akamai",
+    // path: "https://ashotsimonyan.github.io/",
     // remotePatterns: [
     //   {
     //     protocol: 'https',
