@@ -1,8 +1,8 @@
 import { styled, keyframes } from 'styles';
 
 const fixedHeader = keyframes({
-  '0%': { transform: 'translateY(-100%)' },
-  '100%': { transform: 'translateY(0)' },
+  '0%': { top: '-72px' },
+  '100%': { top: '0' },
 });
 
 const HeaderStyle = styled('header', {
@@ -10,14 +10,17 @@ const HeaderStyle = styled('header', {
 
   '&.fixed': {
     backgroundColor: '$white',
-    position: 'sticky',
+    position: 'fixed',
     top: '0px',
     left: '0px',
     right: '0px',
-    transform: 'translateY(-100%)',
     zIndex: 99,
-    animation: `${fixedHeader} 0.2s ease forwards`,
     boxShadow: '$3',
+
+    '&.animated': {
+      top: '-72px',
+      animation: `${fixedHeader} 0.3s ease forwards`,
+    }
   },
 });
 const HeaderContent = styled('div', {
@@ -64,7 +67,7 @@ const HeaderNav = styled('nav', {
     justifyContent: 'space-between',
 
     '.open &': {
-      height: 'calc(100vh - 72px)',
+      height: 'calc(100% - 72px)',
     },
     '.nav-inner': {
       width: '100%',

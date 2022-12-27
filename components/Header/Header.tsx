@@ -50,7 +50,7 @@ const Header = () => {
 
   return (
     <HeaderStyle
-      className={`${drawerOpened ? 'open' : ''} ${fixedHeader ? 'fixed' : ''}`}
+      className={`${drawerOpened ? 'open fixed' : ''} ${fixedHeader ? 'fixed animated' : ''}`}
     >
       <Container css={{ height: '100%' }}>
         <HeaderContent>

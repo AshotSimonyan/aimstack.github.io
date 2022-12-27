@@ -41,15 +41,19 @@ const Hero = () => {
             Check out our Github
           </Button>
           <div>
-            <Button
-              as="a"
-              variant="outline"
-              size={2}
-              href="https://aimstack.io/aim-3-10-release-catboost-integration/"
-              target="_blank"
-            >
-              Aim release <strong>{release}</strong>
-            </Button>
+            {
+              release &&
+              <Button
+                as="a"
+                variant="outline"
+                size={2}
+                href="https://aimstack.io/aim-3-10-release-catboost-integration/"
+                target="_blank"
+              >
+                Aim release <strong>{release}</strong>
+              </Button>
+            }
+
           </div>
         </HeroContent>
       </Container>
