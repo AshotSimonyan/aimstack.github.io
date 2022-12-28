@@ -17,6 +17,7 @@ const VideoGuide = () => {
             aspectHeight = {9}
             aspectWidth = {16}
             thumbnail='/images/static/main/video-thumbnail.png'
+            webp={true}
           />
           {/*<iframe*/}
           {/*  loading="lazy"*/}
