@@ -19,6 +19,7 @@ import aboutSeo from 'content/SeoData/about';
 import Seo from 'components/SEO/SEO';
 
 const About = () => {
+
   return (
     <>
       <Seo {...aboutSeo} />
@@ -39,16 +40,17 @@ const About = () => {
       </AboutHero>
 
       <Culture>
-        {/*TODO add tablet version of bg */}
         <Image
           className="bg-top"
           layout="fill"
           objectFit="cover"
           objectPosition="top"
-          src={'/images/static/about-us/culture-bg.png'}
+          src={'/images/static/about-us/bg.png'}
           priority
-          alt={''}
+          alt='Our Cultural Values'
+          quality={100}
         />
+
         <Container css={{ position: 'relative', zIndex: 2 }}>
           <Text as="h3" size={8} css={{ '@bp1': { textAlign: 'center' } }}>
             Our Cultural Values
