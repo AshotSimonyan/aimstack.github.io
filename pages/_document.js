@@ -1,4 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
+import Script from 'next/script'
 import { getCssText } from '../styles';
 
 class MyDocument extends Document {
@@ -10,19 +11,14 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
+      <Html lang="en">
         <Head>
-          <link
-            rel='stylesheet'
-            href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css'
-          />
           <link rel='preconnect' href='https://fonts.googleapis.com' />
           <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin />
           <link
-            href='https://fonts.googleapis.com/css2?family=Inconsolata&family=Lora&family=Open+Sans:wght@400;500;600;700;800&display=fallback'
+            href='https://fonts.googleapis.com/css2?family=Inconsolata&family=Lora&family=Open+Sans:wght@400;500;600;700;800&display=swap'
             rel='stylesheet' />
-          <script
-            async
+          <Script
             src='https://identity.netlify.com/v1/netlify-identity-widget.js'
           />
           <style
@@ -31,6 +27,7 @@ class MyDocument extends Document {
           />
         </Head>
         <body>
+
         <Main />
         <NextScript />
         </body>

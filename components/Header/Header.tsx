@@ -42,7 +42,7 @@ const Header = () => {
       }
       lastScrollY = scrollY > 10 ? scrollY : 0;
     };
-    window.addEventListener('scroll', updateScrollDirection); // add event listener
+    window.addEventListener('scroll', updateScrollDirection, {passive: true}); // add event listener
     return () => {
       window.removeEventListener('scroll', updateScrollDirection); // clean up
     };
@@ -126,6 +126,7 @@ const Header = () => {
             css={{ marginLeft: 'auto', padding: '$3' }}
             type="button"
             onClick={handleDrawerToggle}
+            aria-label='menu'
           >
             <Icon name={drawerOpened ? 'close' : 'burger'} size={20} />
           </ButtonMenu>

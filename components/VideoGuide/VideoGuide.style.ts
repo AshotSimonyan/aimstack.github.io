@@ -11,8 +11,18 @@ const VideoGuideStyle = styled('section', {
   },
 });
 const VideoWrapper = styled('div', {
-  paddingBottom: '62.5%',
   position: 'relative',
+
+  '.yt-lite': {
+    borderRadius: '$2',
+
+    '> .lty-playbtn': {
+      width: '68px',
+      height: '48px',
+      border: 'none',
+      borderRadius: '25%'
+    }
+  },
 
   '& iframe': {
     position: 'absolute',

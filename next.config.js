@@ -3,7 +3,7 @@ const withExportImages = require('next-export-optimize-images')
 
 const nextConfig = withExportImages({
   reactStrictMode: true,
-  optimizeFonts: false,
+  // optimizeFonts: false,
   // images: {
   //   // remotePatterns: [
   //   //   {
