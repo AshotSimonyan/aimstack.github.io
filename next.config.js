@@ -2,21 +2,21 @@ const { withContentlayer } = require('next-contentlayer');
 const withExportImages = require('next-export-optimize-images')
 
 const nextConfig = withExportImages({
-  reactStrictMode: true,
   async headers() {
     return [
       {
-        source: '/:all*(svg|jpg|png)',
-        locale: false,
+        source: "/:path*",
         headers: [
           {
-            key: 'Cache-Control',
-            value: 'public, max-age=9999999999, must-revalidate',
-          }
+            key: "cache-control",
+            value: "public, max-age=31536000, immutable",
+          },
         ],
       },
-    ]
+    ];
   },
+  reactStrictMode: true,
+
   // optimizeFonts: false,
   // images: {
   //   // remotePatterns: [
