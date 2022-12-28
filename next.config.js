@@ -3,6 +3,20 @@ const withExportImages = require('next-export-optimize-images')
 
 const nextConfig = withExportImages({
   reactStrictMode: true,
+  async headers() {
+    return [
+      {
+        source: '/:all*(svg|jpg|png)',
+        locale: false,
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=9999999999, must-revalidate',
+          }
+        ],
+      },
+    ]
+  },
   // optimizeFonts: false,
   // images: {
   //   // remotePatterns: [
