@@ -16,7 +16,7 @@ const VideoGuide = () => {
             title="An easy-to-use & supercharged open-source experiment tracker"
             aspectHeight = {9}
             aspectWidth = {16}
-            thumbnail='/images/static/main/video-thumbnail.png'
+            thumbnail='/images/static/main/video-thumbnail.webp'
             webp={true}
           />
           {/*<iframe*/}
