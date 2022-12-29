@@ -1,7 +1,7 @@
 const { withContentlayer } = require('next-contentlayer');
-const withExportImages = require('next-export-optimize-images')
+// const withExportImages = require('next-export-optimize-images')
 
-const nextConfig = withExportImages({
+const nextConfig = {
   async headers() {
     return [
       {
@@ -29,6 +29,6 @@ const nextConfig = withExportImages({
   //   // ],
   // },
   disableImportAliasWarning: true,
-});
+};
 
 module.exports = withContentlayer(nextConfig);
