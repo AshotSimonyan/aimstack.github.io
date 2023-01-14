@@ -18,6 +18,7 @@ const theme: Theme = {
     green: '#14C89D',
     black: '#000000',
     black700: 'rgba(0,0,0,0.7)',
+    black800: 'rgba(0,0,0,0.8)',
     white: '#ffffff',
     white100: 'rgba(255,255,255,0.1)',
     white500: 'rgba(255,255,255,0.5)',

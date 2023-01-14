@@ -6,7 +6,7 @@ categories:
   - linux editor
 date: 2022-03-20T17:11:14Z
 description: Cat
-image: https://aim-netlify-image.s3.amazonaws.com/big-cats.jpg
+image: "/images/contentlayer.png"
 tags:
   - neovim
   - Linux
