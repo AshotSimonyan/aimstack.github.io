@@ -18,49 +18,11 @@ The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for t
 
 <!--EndFragment-->
 
-```json
-    {
-      "@next/swc-linux-arm64-gnu": {
-        "current": "12.1.4",
-        "wanted": "12.1.5",
-        "latest": "11.1.3-canary.104",
-        "dependent": "officialstaticblog",
-        "location": "/home/rajdeepsingh/Downloads/officialstaticblog/node_modules/@next/swc-linux-arm64-gnu"
-      },
-      "@next/swc-linux-arm64-musl": {
-        "current": "12.1.4",
-        "wanted": "12.1.5",
-        "latest": "11.1.3-canary.104",
-        "dependent": "officialstaticblog",
-        "location": "/home/rajdeepsingh/Downloads/officialstaticblog/node_modules/@next/swc-linux-arm64-musl"
-      },
-      "eslint": {
-        "current": "8.12.0",
-        "wanted": "8.12.0",
-        "latest": "8.13.0",
-        "dependent": "officialstaticblog",
-        "location": "/home/rajdeepsingh/Downloads/officialstaticblog/node_modules/eslint"
-      },
-      "eslint-config-next": {
-        "current": "12.1.4",
-        "wanted": "12.1.4",
-        "latest": "12.1.5",
-        "dependent": "officialstaticblog",
-        "location": "/home/rajdeepsingh/Downloads/officialstaticblog/node_modules/eslint-config-next"
-      },
-      "marked": {
-        "current": "4.0.12",
-        "wanted": "4.0.14",
-        "latest": "4.0.14",
-        "dependent": "officialstaticblog",
-        "location": "/home/rajdeepsingh/Downloads/officialstaticblog/node_modules/marked"
-      },
-      "next": {
-        "current": "12.1.4",
-        "wanted": "12.1.4",
-        "latest": "12.1.5",
-        "dependent": "officialstaticblog",
-        "location": "/home/rajdeepsingh/Downloads/officialstaticblog/node_modules/next"
-      }
-    } 
+```jsx
+<Flex align='center' css={{ marginTop: '$10' }}>
+  <Icon name='back' size={20} />
+  <Text size={3} css={{ fontWeight: '$3' }}>
+    Go Back
+  </Text>
+</Flex>
 ```
