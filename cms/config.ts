@@ -10,8 +10,8 @@ export default {
     // auth_endpoint: 'api/auth'
   },
   load_config_file: false,
-  media_folder: 'public/images',
-  public_folder: '/images',
+  media_folder: 'public/images/blog',
+  public_folder: '/images/blog',
   collections: [
     {
       label: 'Blog',
@@ -32,7 +32,7 @@ export default {
           widget: 'boolean',
           hint: 'Publish post to set to false',
           required: true,
-          default: true,
+          default: false,
         },
       ],
     },

@@ -22,13 +22,14 @@ import { allPosts } from 'contentlayer/generated';
 import Image from 'next/image';
 import Seo from '../../components/SEO/SEO';
 import { Category } from '../../components/Card/Card.style';
+import SITE_URL from 'config';
 
 export default function PostPage({ post, posts }) {
   const index = posts.findIndex((object) => {
     return object.slug === post.slug;
   });
 
-  const url = process.env.SITE_URL ? `${process.env.SITE_URL}/blog/${post.slug}` : `https://aimstack.netlify.app/blog/${post.slug}` //change url
+  const url = `${SITE_URL}/blog/${post.slug}`
 
   return (
     <BlogSingleStyle>
