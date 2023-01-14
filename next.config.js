@@ -18,16 +18,16 @@ const nextConfig = {
   reactStrictMode: true,
 
   // optimizeFonts: false,
-  // images: {
-  //   // remotePatterns: [
-  //   //   {
-  //   //     protocol: 'https',
-  //   //     hostname: 'aim-netlify-image.s3.amazonaws.com',
-  //   //     port: '',
-  //   //     // pathname: '/account123/**',
-  //   //   },
-  //   // ],
-  // },
+  images: {
+    // remotePatterns: [
+    //   {
+    //     protocol: 'https',
+    //     hostname: 'aim-netlify-image.s3.amazonaws.com',
+    //     port: '',
+    //     // pathname: '/account123/**',
+    //   },
+    // ],
+  },
   disableImportAliasWarning: true,
 };
 
