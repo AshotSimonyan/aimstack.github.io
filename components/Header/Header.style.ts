@@ -1,32 +1,23 @@
 import { styled, keyframes } from 'styles';
 
-const fixedHeader = keyframes({
-  '0%': { top: '-72px' },
-  '100%': { top: '0' },
-});
-
 const HeaderStyle = styled('header', {
   height: '72px',
+  position: 'fixed',
+  top: '0px',
+  left: '0px',
+  right: '0px',
+  zIndex: 99,
+  transition: '$main',
 
   '&.fixed': {
-    backgroundColor: '$white',
-    position: 'fixed',
-    top: '0px',
-    left: '0px',
-    right: '0px',
-    zIndex: 99,
     boxShadow: '$3',
-
-    '&.animated': {
-      top: '-72px',
-      animation: `${fixedHeader} 0.3s ease forwards`,
-    }
-  },
+    backgroundColor: '$white'
+  }
 });
 const HeaderContent = styled('div', {
   display: 'flex',
   alignItems: 'center',
-  height: '100%',
+  height: '100%'
 });
 const HeaderNav = styled('nav', {
   display: 'flex',
@@ -40,16 +31,37 @@ const HeaderNav = styled('nav', {
         marginRight: '$6',
 
         '@bp0': {
-          marginRight: '$4',
-        },
+          marginRight: '$4'
+        }
       },
 
       a: {
-        '&:hover': {
-          opacity: '.8',
+        backfaceVisibility: 'hidden',
+        display: 'inline-flex',
+
+        '.text': {
+          transition: '$main',
         },
-      },
-    },
+        '.badge': {
+          // position: 'absolute',
+          display: 'inline-block',
+          height: '18px',
+          lineHeight: '18px',
+          padding: '0 4px',
+          borderRadius: '2px',
+          backgroundColor: '$primary',
+          color: '$white',
+          fontWeight: '700',
+          fontSize: '10px',
+          marginLeft: '6px'
+        },
+        '&:hover': {
+          '.text': {
+            opacity: '.6'
+          },
+        }
+      }
+    }
   },
 
   '@bp1': {
@@ -67,19 +79,19 @@ const HeaderNav = styled('nav', {
     justifyContent: 'space-between',
 
     '.open &': {
-      height: 'calc(100% - 72px)',
+      height: 'calc(100% - 72px)'
     },
     '.nav-inner': {
       width: '100%',
       flexDirection: 'column',
       alignItems: 'inherit',
       justifyContent: 'space-between',
-      padding: '16px 20px 0',
+      paddingTop: '16px'
     },
     '.nav-list': {
       flexDirection: 'column',
-
       alignItems: 'flex-start',
+
       '> li': {
         fontSize: '$2',
         fontWeight: '$3',
@@ -87,28 +99,32 @@ const HeaderNav = styled('nav', {
 
         a: {
           display: 'block',
-          py: '$3'
+          padding: '$3 $5',
+
+          '&:active': {
+            backgroundColor: '$primaryLight'
+          }
         },
 
         '&:not(:last-child)': {
-          marginRight: '0',
-        },
-      },
-    },
-  },
+          marginRight: '0'
+        }
+      }
+    }
+  }
 });
 const Logo = styled('div', {
   marginRight: '50px',
   '& .logo': {
     maxWidth: '158px',
     width: '100%',
-    display: 'block',
+    display: 'block'
   },
 
   '@bp1': {
     position: 'relative',
-    zIndex: 11,
-  },
+    zIndex: 11
+  }
 });
 
 const HeaderButton = styled('div', {
@@ -117,16 +133,16 @@ const HeaderButton = styled('div', {
   span: {
     span: {
       display: 'flex',
-      alignItems: 'center',
-    },
+      alignItems: 'center'
+    }
   },
   '&.desktop-btn': {
     span: {
       span: {
-        justifyContent: 'flex-end',
-      },
-    },
-  },
+        justifyContent: 'flex-end'
+      }
+    }
+  }
 });
 
 const ButtonMenu = styled('button', {
@@ -140,8 +156,8 @@ const ButtonMenu = styled('button', {
     border: 'none',
     backgroundColor: 'transparent',
     lineHeight: 1,
-    cursor: 'pointer',
-  },
+    cursor: 'pointer'
+  }
 });
 
 const MobileSocial = styled('ul', {
@@ -153,9 +169,9 @@ const MobileSocial = styled('ul', {
     py: '$6',
 
     '> li': {
-      marginRight: '$6',
-    },
-  },
+      marginRight: '$6'
+    }
+  }
 });
 
 export {
@@ -165,5 +181,5 @@ export {
   HeaderNav,
   HeaderButton,
   ButtonMenu,
-  MobileSocial,
+  MobileSocial
 };
