@@ -7,6 +7,8 @@ categories:
 date: 2022-03-20T17:11:14.000Z
 title: Article post 17
 image: /images/contentlayer.png
+draft: false
+slug: article-post-17
 body_1: >-
   <div align="center">
     <img src="https://user-images.githubusercontent.com/13848158/154338760-edfe1885-06f3-4e02-87fe-4b13a403516b.png"/>
@@ -43,13 +45,12 @@ body_1: >-
     \[![PyPI Downloads](https://img.shields.io/pypi/dw/aim?color=green)](https://pypi.org/project/aim/)
     \[![Issues](https://img.shields.io/github/issues/aimhubio/aim)](http://github.com/aimhubio/aim/issues)
 
+
     
   </div>
 
 
   <iframe width="560" height="315" src="https://www.youtube.com/embed/_26BhViw28s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
-draft: false
-slug: article-post-17
 tags:
   - neovim
   - Linux
@@ -80,13 +81,15 @@ description: Cat
 
 <div align="center">
   
-  [![Platform Support](https://img.shields.io/badge/platform-Linux%20%7C%20macOS-blue)]()
-  [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/aim)](https://pypi.org/project/aim/)
-  [![PyPI Package](https://img.shields.io/pypi/v/aim?color=yellow)](https://pypi.org/project/aim/)
-  [![License](https://img.shields.io/badge/License-Apache%202.0-orange.svg)](https://opensource.org/licenses/Apache-2.0)
-  [![PyPI Downloads](https://img.shields.io/pypi/dw/aim?color=green)](https://pypi.org/project/aim/)
-  [![Issues](https://img.shields.io/github/issues/aimhubio/aim)](http://github.com/aimhubio/aim/issues)
+  \[![Platform Support](https://img.shields.io/badge/platform-Linux%20%7C%20macOS-blue)]()
+  \[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/aim)](https://pypi.org/project/aim/)
+  \[![PyPI Package](https://img.shields.io/pypi/v/aim?color=yellow)](https://pypi.org/project/aim/)
+  \[![License](https://img.shields.io/badge/License-Apache%202.0-orange.svg)](https://opensource.org/licenses/Apache-2.0)
+  \[![PyPI Downloads](https://img.shields.io/pypi/dw/aim?color=green)](https://pypi.org/project/aim/)
+  \[![Issues](https://img.shields.io/github/issues/aimhubio/aim)](http://github.com/aimhubio/aim/issues)
   
 </div>
+
+
   
 <iframe width="560" height="315" src="https://www.youtube.com/embed/_26BhViw28s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
