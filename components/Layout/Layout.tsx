@@ -8,6 +8,7 @@ import Image from 'next/image';
 interface ILayout {
   children: ReactNode;
 }
+
 const Layout: FC<ILayout> = ({ children }) => {
   const router = useRouter();
   const admin = router?.pathname.includes('/admin');
@@ -18,10 +19,10 @@ const Layout: FC<ILayout> = ({ children }) => {
     <LayoutStyle>
       {!blog && (
         <Image
-          className="bg-top"
-          layout="fill"
+          className='bg-top'
+          layout='fill'
           objectFit={`${home ? 'contain' : 'fill'}`}
-          objectPosition="top"
+          objectPosition='top'
           src={'/images/static/main/main-bg.png'}
           priority
           alt={''}
@@ -30,8 +31,7 @@ const Layout: FC<ILayout> = ({ children }) => {
 
       {
         admin ?
-          <Content>{children}</Content> :
-
+          children :
           <Wrapper>
             <Header />
             <Content>{children}</Content>
@@ -42,11 +42,11 @@ const Layout: FC<ILayout> = ({ children }) => {
 
       {home && (
         <Image
-          className="bg-bottom"
+          className='bg-bottom'
           width={2000}
           height={3000}
-          objectFit="contain"
-          objectPosition="center -240px"
+          objectFit='contain'
+          objectPosition='center -240px'
           src={'/images/static/main/lines-bg.png'}
           alt={''}
         />

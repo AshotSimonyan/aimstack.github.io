@@ -71,7 +71,61 @@ const Post = defineDocumentType(() => ({
   },
 }));
 
-export default makeSource({
+const Package = defineDocumentType(() => ({
+  name: 'Package',
+  filePathPattern: `**/*.md`,
+  contentType: 'markdown',
+  fields: {
+    title: {
+      type: 'string',
+      required: true,
+    },
+    author: {
+      type: 'string',
+      required: true,
+    },
+    logo: {
+      type: 'string',
+      required: true,
+    },
+    org_name: {
+      type: 'string',
+      required: true,
+    },
+    org_link: {
+      type: 'string',
+      required: true,
+    },
+    repo_name: {
+      type: 'string',
+      required: true,
+    },
+    repo_link: {
+      type: 'string',
+      required: true,
+    },
+    installation: {
+      type: 'string',
+      required: true,
+    },
+    about: {
+      type: 'string',
+      required: true,
+    },
+  },
+}));
+
+export const postSource = makeSource({
   contentDirPath: 'posts',
   documentTypes: [Post],
+});
+
+export const packageSource = makeSource({
+  contentDirPath: 'packages',
+  documentTypes: [Package],
+});
+
+export default makeSource({
+  documentTypes: [Post, Package],
+  contentDirPath: 'posts',
 });

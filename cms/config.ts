@@ -10,8 +10,8 @@ export default {
     // auth_endpoint: 'api/auth'
   },
   load_config_file: false,
-  media_folder: 'public/images/blog',
-  public_folder: '/images/blog',
+  media_folder: 'public/images/dynamic',
+  public_folder: '/images/dynamic',
   collections: [
     {
       label: 'Blog',
@@ -34,6 +34,26 @@ export default {
           required: true,
           default: false,
         },
+      ],
+    },
+    {
+      label: 'Package',
+      name: 'package',
+      folder: 'subpackages',
+      create: true,
+      fields: [
+        { label: 'Title', name: 'title', widget: 'string' },
+        { label: 'Author', name: 'author', widget: 'string' },
+        { label: 'Logo', name: 'logo', widget: 'image' },
+        { label: 'Organization Name', name: 'org_name', widget: 'string' },
+        { label: 'Organization Link', name: 'org_link', widget: 'string' },
+        { label: 'Repo Name', name: 'repo_name', widget: 'string' },
+        { label: 'Repo Link', name: 'repo_link', widget: 'string' },
+        { label: 'Version', name: 'version', widget: 'string' },
+        { label: 'Installation', name: 'installation', widget: 'string' },
+        { label: 'Main Content', name: 'body', widget: 'markdown' },
+        { label: 'About', name: 'about', widget: 'string' },
+        { label: 'Badges', name: 'badges_body', widget: 'markdown' },
       ],
     },
   ],
