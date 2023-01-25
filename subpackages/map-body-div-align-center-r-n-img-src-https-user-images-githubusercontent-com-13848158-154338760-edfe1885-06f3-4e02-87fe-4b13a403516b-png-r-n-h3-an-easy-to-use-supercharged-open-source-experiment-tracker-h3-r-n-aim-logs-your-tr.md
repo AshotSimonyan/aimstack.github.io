@@ -1,4 +1,5 @@
 ---
+title: aimhubio-aim
 author: Ashot
 logo: /images/dynamic/aim-logo.svg
 org_name: aimhubio
