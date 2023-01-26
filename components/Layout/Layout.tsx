@@ -14,10 +14,12 @@ const Layout: FC<ILayout> = ({ children }) => {
   const admin = router?.pathname.includes('/admin');
   const home = router?.pathname === '/';
   const blog = router?.pathname.includes('/blog');
+  const currentPath = router.route;
+  const subpackage = currentPath === '/[slug]'
 
   return (
     <LayoutStyle>
-      {!blog && (
+      {!blog || !subpackage && (
         <Image
           className='bg-top'
           layout='fill'
@@ -33,7 +35,7 @@ const Layout: FC<ILayout> = ({ children }) => {
         admin ?
           children :
           <Wrapper>
-            <Header />
+            <Header dark={subpackage} />
             <Content>{children}</Content>
             <Footer />
           </Wrapper>

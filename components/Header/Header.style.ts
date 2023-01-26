@@ -9,6 +9,19 @@ const HeaderStyle = styled('header', {
   zIndex: 99,
   transition: '$main',
 
+  '&.dark': {
+    backgroundColor: '$darkBlue',
+    a: {
+      color: '$white',
+    },
+
+    '&.fixed': {
+      a: {
+        color: '$textColor',
+      },
+    }
+  },
+
   '&.fixed': {
     boxShadow: '$3',
     backgroundColor: '$white'

@@ -20,39 +20,33 @@ const Categories = defineNestedType(() => ({
 
 const Post = defineDocumentType(() => ({
   name: 'Post',
-  filePathPattern: `**/*.md`,
+  filePathPattern: `posts/**/*.md`,
   contentType: 'markdown',
   fields: {
     title: {
       type: 'string',
-      required: true,
     },
     date: {
       type: 'date',
-      required: true,
     },
     author: {
       type: 'string',
-      required: true,
     },
 
     description: {
       type: 'string',
-      required: true,
     },
     slug: {
       type: 'string',
     },
     id: {
       type: 'number',
-      required: false,
     },
     image: {
       type: 'string',
     },
     draft: {
       type: 'string',
-      required: true,
     },
     tags: {
       type: 'list',
@@ -73,59 +67,49 @@ const Post = defineDocumentType(() => ({
 
 const Package = defineDocumentType(() => ({
   name: 'Package',
-  filePathPattern: `**/*.md`,
+  filePathPattern: `subpackages/**/*.md`,
   contentType: 'markdown',
   fields: {
     title: {
       type: 'string',
-      required: true,
     },
     author: {
       type: 'string',
-      required: true,
     },
     logo: {
       type: 'string',
-      required: true,
     },
     org_name: {
       type: 'string',
-      required: true,
     },
     org_link: {
       type: 'string',
-      required: true,
     },
     repo_name: {
       type: 'string',
-      required: true,
     },
     repo_link: {
       type: 'string',
-      required: true,
     },
     installation: {
       type: 'string',
-      required: true,
     },
     about: {
       type: 'string',
-      required: true,
+    },
+    badges_body: {
+      type: 'string',
+    },
+  },
+  computedFields: {
+    slug: {
+      type: 'string',
+      resolve: (doc) => doc._raw.sourceFileName.replace(/\.md/, ''),
     },
   },
 }));
-
-export const postSource = makeSource({
-  contentDirPath: 'posts',
-  documentTypes: [Post],
-});
-
-export const packageSource = makeSource({
-  contentDirPath: 'packages',
-  documentTypes: [Package],
-});
-
 export default makeSource({
+  contentDirPath: '.',
+  contentDirInclude: [],
   documentTypes: [Post, Package],
-  contentDirPath: 'posts',
 });

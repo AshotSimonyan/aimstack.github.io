@@ -16,7 +16,7 @@ import {
   ShareSocial
 } from 'styles/pages/Blog.style';
 import { formattedDate } from 'utils';
-
+import Markdown from 'markdown-to-jsx';
 import { Icon } from 'components/UIkit';
 import { allPosts } from 'contentlayer/generated';
 import Image from 'next/image';
@@ -28,7 +28,6 @@ export default function PostPage({ post, posts }) {
   const index = posts.findIndex((object) => {
     return object.slug === post.slug;
   });
-
   const url = `${SITE_URL}/blog/${post.slug}`
 
   return (
@@ -87,7 +86,11 @@ export default function PostPage({ post, posts }) {
         </ImageWrapper>
       </Container>
       <Container css={{ maxWidth: '848px' }}>
-        <InnerHTML dangerouslySetInnerHTML={{ __html: post.body.html }} />
+        <InnerHTML>
+          <Markdown>
+            {post.body.raw}
+          </Markdown>
+        </InnerHTML>
         <ShareSocial>
           <TwitterShareButton
             url={url}
