@@ -19,7 +19,7 @@ const Layout: FC<ILayout> = ({ children }) => {
 
   return (
     <LayoutStyle>
-      {!blog || !subpackage && (
+      {(!blog && !subpackage) && (
         <Image
           className='bg-top'
           layout='fill'
